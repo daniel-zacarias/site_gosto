@@ -44,8 +44,8 @@ body{
     list-style: none;
 }
 
-.selecionado{
-    color:#a5aead;
+.nav  a .select{
+    color: #a5aead;
 }
 /* .Logo{
     font-family: Averia;
@@ -78,21 +78,100 @@ body{
 
 .btnIsc{
     align-items: center;
-    margin-left: 40%;
     margin-top: 50px;
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 20px;
     padding-left: 20px;
-    border-radius: 10%;
+    border-radius: 27px;
     appearance: none;
     background:none;
     border: 1px white solid;
     color: white;
     cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 50px;
+    font-family: FFF;
 }
 
 .btnIsc:hover{
     background-color: #252525;
+}
+
+.inicioVic{
+    background-image: url(imagens/vitoria.jpg);
+
+    height: 720px;
+    border: 1px white solid;
+    position: relative;
+}
+
+.inicioVic p{
+    color: white;
+    position: absolute;
+    font-family: FFF;
+    left: 50%;
+    transform:  translateX(-50%);
+    font-size: 2em;
+}
+
+.inicioVic img{
+    justify-content: space-around;
+}
+
+.Container{
+    border: 5px #a5aead dashed ;
+    text-align: center;
+    margin-top: 250px;
+}
+.Container p{
+    font-size: 2em;
+    font-family: FFF;
+    color: white;
+}
+
+.square{
+    display: flex;
+    width: 100%;
+    justify-content:space-around ;
+    margin-top: 15px;
+    height: 720px;
+    
+    
+}
+
+.square p{
+    font-size: 1em;
+}
+
+.square div{
+    height: 400px;
+    width: 400px;
+    margin-top: 150px;
+    background-color: #a5aead;
+    border: white 2px dotted;
+}
+
+.data span{
+    font-size: 7.5em;
+    margin-top: 50px;
+    font-family: FFF;
+}
+
+ p .maio{
+    font-size: 8em;
+}
+
+/* Rodapé */
+
+.rodape{
+    background-color:  #232128;
+    display: flex;
+    text-align: center
+}
+
+.rodape p{
+    margin-left: 250px ;
+    font-size: 2em;
 }
