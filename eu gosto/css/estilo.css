@@ -1,0 +1,98 @@
+@font-face{
+    font-family: Averia;
+    src: url(AveriaSerifLibre-Bold.ttf);
+    font-family: FFF;
+    src: url(FFFFORWA.TTF);
+}
+*{
+    outline: 0;
+}
+
+.Menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: #232128;
+    width: 100%;
+    border-bottom: 0px;
+}
+
+body{
+    background-color: black;
+}
+
+.logo{
+    width: 200px;
+}
+
+.nav{
+    display: flex;
+    
+}
+
+.nav li{
+    padding-right: 25px;
+    color: white;
+    background-color:#23212888 ;
+    text-decoration: none;
+    list-style: none;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.nav a{
+    text-decoration: none;
+    list-style: none;
+}
+
+.selecionado{
+    color:#a5aead;
+}
+/* .Logo{
+    font-family: Averia;
+    font-size: 145px;
+    padding-left: 10px;
+    border-top: #4D95FF 15px solid;
+    border-left: #4D95FF 15px solid;
+    border-right: solid #FF1A20 15px;
+    border-bottom: solid #FF1A20 15px;
+    
+
+} */
+
+/* Inicio */
+
+.entrada{
+    text-align: center;
+    background-color: rgba(47, 79, 79, 0.459);
+    margin: 0px;
+    margin-top: 50px;
+    border: 5px gold double;
+    align-items: center;
+}
+
+.entrada span{
+    font-size: 3em;
+    font-family: FFF;
+    color: white;
+}
+
+.btnIsc{
+    align-items: center;
+    margin-left: 40%;
+    margin-top: 50px;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 10%;
+    appearance: none;
+    background:none;
+    border: 1px white solid;
+    color: white;
+    cursor: pointer;
+}
+
+.btnIsc:hover{
+    background-color: #252525;
+}
