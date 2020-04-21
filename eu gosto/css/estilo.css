@@ -196,9 +196,10 @@ body{
     background-color: #232128d9;
     justify-content: center;
     margin-top: 50px ;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     margin-left: 560px;
     border: #9c898d 3px solid;
+    
 }
 
 .regras span{
@@ -217,4 +218,64 @@ body{
     font-size: 2.2em;
     margin-top: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif ;
+}
+
+/* Premios */
+
+.premios{
+    height: 1000px;
+    margin-top: 40px;
+    
+}
+
+.divisao, .divisao2{
+    height: 25%;
+}
+
+.divisao2{
+    
+    justify-content: space-around;
+    display: flex;
+    
+}
+
+.terceiro, .segundo, .primeiro{
+    width: 500px;
+    height:  500px;
+    background-color: white;
+    text-align: center;
+}
+
+.primeiro{
+    background-color: #232128d9;
+    border: gold 5px solid;
+}
+
+.segundo{
+    background-color: #232128;
+    border: silver 5px solid;
+}
+
+.terceiro{
+    background-color: #232128;
+    border: orangered 3px solid;
+}
+
+.divisao img, .divisao2 img{
+    height: 100px;
+}
+
+.divisao span, .divisao2 span{
+    font-size: 2em;
+    color: white;
+}
+
+.faixa {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+}
+
+.emoji{
+    height:500px;
 }
