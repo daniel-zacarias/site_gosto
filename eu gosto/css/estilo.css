@@ -244,6 +244,7 @@ body{
     height:  500px;
     background-color: white;
     text-align: center;
+    min-width: 500px;
 }
 
 .primeiro{
@@ -265,10 +266,17 @@ body{
     height: 100px;
 }
 
-.divisao span, .divisao2 span{
-    font-size: 2em;
+
+.divisao span{
+    font-size: 30px;
     color: white;
 }
+ .divisao2 span{
+    font-size: 32px;
+    color: white;
+}
+
+
 
 .faixa {
     width: 250px;
@@ -276,6 +284,62 @@ body{
     background-color: white;
 }
 
-.emoji{
-    height:500px;
+/* Login */
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    background-color: rgb(220, 220, 220);
+}
+
+.formLogin, .formCadastro{
+    width: 400px;
+    
+    background-color: rgba(0, 0, 0, 0.698);
+    padding: 20px 40px 40px;
+    text-align: center;
+    font-size: 2em;
+    
+    border: rgba(0, 0, 0, 0.472) 3px solid;
+}
+
+.formCadastro{
+    background-color: rgba(0, 0, 0, 0.698);
+}
+
+
+
+.NomeLogin{
+    padding-right: 1px;
+    margin-bottom:40px ;
+    font-size: 1em;
+}
+
+.senhaLogin{
+    
+    margin-bottom:25px ;
+    font-size: 1em;
+}
+
+.formLogin span, .formCadastro span{
+    width: 400px;
+    color: white;
+    font-size: 50px;
+    
+}
+
+
+
+.btnEntrar, .btncadastrar{
+    padding: 10px  155px ;
+    font-size: 30px;
+    cursor: pointer;
+    background: grey;
+    color: white;
+    border: none;
+}
+
+.btncadastrar{
+    padding: 10px  134px ;
 }
