@@ -314,7 +314,9 @@ body{
     padding-right: 1px;
     margin-bottom:40px ;
     font-size: 1em;
+    transition: border 0.51s;
 }
+
 
 .senhaLogin{
     
