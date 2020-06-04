@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H-LOL</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -21,24 +22,27 @@
             <a href="premio.html">
                 <li >Prêmios</li>
             </a>
-            <a href="login.html">
-                <li class="select">Login</li>
-            </a>
+            <a href="login.html"><li><button class="btnlogin">Login</button></li></a>
             <a href="Cadastrar.html">
-                <li>Cadastrar</li>
+                <li><button class="btncadastrar"> Cadastrar</button></li>
             </a>
         </ul>
     </div>
     <div class="login">
-        <form action="" class="formLogin">
+        <form action="" class="formLogin" >
             <span>LOGIN</span><br>
-
-            <input type="text" class="NomeLogin" placeholder="NickName"><br>
-            <input type="password" placeholder="Senha" class="senhaLogin"><br>
-            <button class="btnEntrar">Entrar</button><br>
-            <span style="font-size: 20px;">  Não tem login? <a style="color: white;" href="Cadastrar.html">Clique aqui</a></span>
+            <div class="campos">
+            <label for="login">Nick</label>
+            <input type="text" id="login" class="NomeLogin " ><br>
+            </div>
+            <div class="campos">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" class="senhaLogin"><br>
+            </div>
+            <input type="button" class="btnEntrar" value="Entrar"><br>
+            <span style="font-size: 35px;">  Não tem login? <a style="color: white;" href="Cadastrar.html">Clique aqui</a></span>
         </form>
-
+        <div class="image"></div>
     </div>
     <div class="rodape">
         <img src="css/imagens/wixLogo.PNG" alt="">
@@ -46,3 +50,16 @@
     </div>
 </body>
 </html>
+<script>
+     const input = document.querySelectorAll("input");  //pega todos os elementos com a class .mudar(const valor contante)
+
+for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
+    input[i].addEventListener("focus", function () { // quando o campo texto for usado
+        this.offsetParent.classList.add("ativar"); // adicione a div pai a class .ativar
+    }) 
+    input[i].addEventListener("blur", function () { //quando o campo de texto deixar de ser usado
+        if (this.value == "") // caso valor do texto for ""
+            this.offsetParent.classList.remove("ativar");  //retira a class .ativar
+    })
+}
+</script>

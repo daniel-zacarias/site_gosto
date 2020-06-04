@@ -1,0 +1,105 @@
+.premios{
+    height: 1000px;
+    margin-top: 40px;
+    
+}
+
+.divisao, .divisao2{
+    height: 25%;
+}
+
+.divisao2{
+    
+    justify-content: space-around;
+    display: flex;
+    
+}
+
+.terceiro, .segundo, .primeiro{
+    width: 500px;
+    height:  500px;
+    background-color: white;
+    text-align: center;
+    min-width: 500px;
+}
+
+.primeiro{
+    background-color: #232128d9;
+    border: gold 5px solid;
+}
+
+.segundo{
+    background-color: #232128;
+    border: silver 5px solid;
+}
+
+.terceiro{
+    background-color: #232128;
+    border: orangered 3px solid;
+}
+
+.divisao img, .divisao2 img{
+    height: 100px;
+}
+
+
+.divisao span{
+    font-size: 30px;
+    color: white;
+}
+ .divisao2 span{
+    font-size: 32px;
+    color: white;
+}
+
+
+.imagem_premios{
+    height: 250px;
+}
+.faixa {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+}
+
+@media only screen and (max-width: 600px){
+   
+
+    .divisao img, .divisao2 img{
+        height: 50px;
+    }
+    .premios{
+        height: 600px;
+    margin-top: 0px;
+    padding-top: 25%;
+    }
+    
+    .divisao2{
+        justify-content: start;
+       
+        width: 300px;
+        margin-bottom: 20%;
+    }
+
+    .terceiro, .segundo, .primeiro{
+        width: 300px;
+        height:  200px;                         /* 3 */
+        margin:0;
+        min-width: 200px;
+    }
+
+    .divisao span{
+        font-size: 16px;
+        color: white;
+        
+    }
+     .divisao2 span{
+        font-size: 18px;
+        color: white;
+        
+    }
+
+    .imagem_premios{
+        display: none;
+    }
+}

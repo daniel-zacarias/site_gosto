@@ -1,8 +1,8 @@
 @font-face{
     font-family: Averia;
-    src: url(AveriaSerifLibre-Bold.ttf);
+    src: url(fontes/AveriaSerifLibre-Bold.ttf);
     font-family: FFF;
-    src: url(FFFFORWA.TTF);
+    src: url(fontes/FFFFORWA.TTF);
 }
 *{
     outline: 0;
@@ -19,10 +19,13 @@
     background-color: #232128;
     width: 100%;
     border-bottom: 0px;
+    position: fixed;
+    margin-bottom: -71px;
 }
 
 body{
     background-color: black;
+    margin-top: 90px;
 }
 
 .logo{
@@ -52,12 +55,32 @@ body{
     color: #a5aead;
 }
 
+/* ul>a:nth-child(4){
+    padding: 12px 10px;
+    display: none;
+    color: black;
+    background-color: yellow;
+} */
+
 @media only screen and (max-width: 600px){
 
     .Menu,  .nav{
         display: flex;
         flex-wrap: wrap;
     }
+
+    body{
+        margin-top: 200px;
+    }
+}
+
+.btnlogin{
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: FFF;
+    cursor: pointer;
+    box-shadow: 2px 1px;
 }
 /* .Logo{
     font-family: Averia;
@@ -73,156 +96,7 @@ body{
 
 /* Inicio */
 
-.entrada{
-    text-align: center;
-    background-color: rgba(47, 79, 79, 0.459);
-    margin: 0px;
-    margin-top: 50px;
-    border: 5px gold double;
-    align-items: center;
-}
 
-.entrada span{
-    font-size: 3em;
-    font-family: FFF;
-    color: white;
-}
-
-.btnIsc{
-    align-items: center;
-    margin-top: 50px;
-    font-size: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    border-radius: 27px;
-    appearance: none;
-    background:none;
-    border: 1px white solid;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-bottom: 50px;
-    font-family: FFF;
-}
-
-.btnIsc:hover{
-    background-color: #252525;
-}
-
-.inicioVic{
-    background-image: url(imagens/derrota.PNG);
-
-    height: 720px;
-    border: 1px white solid;
-    position: relative;
-}
-
-.inicioVic p{
-    color: white;
-    position: absolute;
-    font-family: FFF;
-    left: 50%;
-    transform:  translateX(-50%);
-    font-size: 2em;
-}
-
-.inicioVic img{
-    justify-content: space-around;
-}
-
-.Container{
-    border: 5px #a5aead dashed ;
-    text-align: center;
-    margin-top: 250px;
-}
-.Container p{
-    font-size: 2em;
-    font-family: FFF;
-    color: white;
-}
-
-.square{
-    display: flex;
-    width: 100%;
-    justify-content:space-around ;
-    margin-top: 15px;
-    height: 720px;
-    
-    
-}
-
-.square p{
-    font-size: 1em;
-}
-
-.square div{
-    height: 400px;
-    width: 400px;
-    margin-top: 150px;
-    background-color: #a5aead;
-    border: white 2px dotted;
-    min-width: 400px;
-}
-
-.data span{
-    font-size: 7.5em;
-    margin-top: 50px;
-    font-family: FFF;
-}
-
- p .maio{
-    font-size: 8em;
-}
-
-@media only screen and (max-width: 600px){
-    .inicioVic {
-        display: none;
-    }
-    
-    
-    .entrada span{
-        font-size: 20px;
-       
-    }
-    .square p{
-        font-size: 11px;
-    }
-    .square{
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0;
-    }
-
-    .square div{
-        height: 200px;
-        width: 200px;
-        margin: 0px;
-        background-color: #a5aead;
-        border: white 2px dotted;
-        min-width: 200px;
-    }
-
-    .square img{
-        height: 100px;
-        width: 100px;
-    }
-    .data span{
-        font-size: 30px;
-        margin-top: 20px;
-        font-family: FFF;
-    }
-    
-     p .maio{
-        font-size: 10px;
-    }
-
-    .Container{
-        margin: 0;
-    }
-
-}
 
 /* Rodapé */
 
@@ -258,234 +132,24 @@ body{
 
 
 
-.regras{
-    height: 560px;
-    width: 720px;
-    background-color: #232128d9;
-    justify-content: center;
-    margin-top: 50px ;
-    margin-bottom: 150px;
-    margin-left: 560px;
-    border: #9c898d 3px solid;
-    
-}
-
-.regras span{
-    font-size: 3em;
-    text-align: center;
-}
-
-
-.regras li{
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.regras p{
-    font-size: 2.2em;
-    margin-top: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif ;
-}
-
-@media only screen and (max-width: 600px){
-    .regras{
-        height: 400px;
-    width: 420px;
-    background-color: #232128d9;
-    justify-content: center;
-    margin: 0;
-    border: #9c898d 3px solid;
-    }
-
-    .regras span{
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    
-    .regras li{
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: white;
-    }
-    
-    .regras p{
-        font-size: 20px;
-        margin-top: 5px;
-        font-family: Georgia, 'Times New Roman', Times, serif ;
-    }
-
-
-}
 
 
 /* Premios */
 
-.premios{
-    height: 1000px;
-    margin-top: 40px;
-    
-}
-
-.divisao, .divisao2{
-    height: 25%;
-}
-
-.divisao2{
-    
-    justify-content: space-around;
-    display: flex;
-    
-}
-
-.terceiro, .segundo, .primeiro{
-    width: 500px;
-    height:  500px;
-    background-color: white;
-    text-align: center;
-    min-width: 500px;
-}
-
-.primeiro{
-    background-color: #232128d9;
-    border: gold 5px solid;
-}
-
-.segundo{
-    background-color: #232128;
-    border: silver 5px solid;
-}
-
-.terceiro{
-    background-color: #232128;
-    border: orangered 3px solid;
-}
-
-.divisao img, .divisao2 img{
-    height: 100px;
-}
 
 
-.divisao span{
-    font-size: 30px;
-    color: white;
-}
- .divisao2 span{
-    font-size: 32px;
-    color: white;
-}
-
-
-.imagem_premios{
-    height: 250px;
-}
-.faixa {
-    width: 250px;
-    height: 50px;
-    background-color: white;
-}
-
-@media only screen and (max-width: 600px){
-   
-
-    .divisao img, .divisao2 img{
-        height: 50px;
-    }
-    .premios{
-        height: 600px;
-    margin-top: 0px;
-    padding-top: 25%;
-    }
-    
-    .divisao2{
-        justify-content: start;
-       
-        width: 300px;
-        margin-bottom: 20%;
-    }
-
-    .terceiro, .segundo, .primeiro{
-        width: 300px;
-        height:  200px;                         /* 3 */
-        margin:0;
-        min-width: 200px;
-    }
-
-    .divisao span{
-        font-size: 16px;
-        color: white;
-        
-    }
-     .divisao2 span{
-        font-size: 18px;
-        color: white;
-        
-    }
-
-    .imagem_premios{
-        display: none;
-    }
-}
 
 /* Login */
-.login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 750px;
-    background-color: rgb(220, 220, 220);
-}
-
-.formLogin, .formCadastro{
-    width: 400px;
-    
-    background-color: rgba(0, 0, 0, 0.698);
-    padding: 20px 40px 40px;
-    text-align: center;
-    font-size: 2em;
-    border-radius: 24px;
-    border: rgba(0, 0, 0, 0.472) 3px solid;
-}
-
-.formCadastro{
-    background-color: rgba(0, 0, 0, 0.698);
-}
 
 
-
-.NomeLogin{
-    padding-right: 1px;
-    margin-bottom:40px ;
-    font-size: 1em;
-    transition: border 0.51s;
-}
-
-
-.senhaLogin{
-    
-    margin-bottom:25px ;
-    font-size: 1em;
-}
-
-.formLogin span, .formCadastro span{
-    width: 400px;
-    color: white;
-    font-size: 50px;
-    
-}
-
-
-
-.btnEntrar, .btncadastrar{
-    padding: 10px  155px ;
-    font-size: 30px;
+.btncadastrar:first-child{
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: FFF;
     cursor: pointer;
-    background: grey;
-    color: white;
-    border: none;
-}
-
-.btncadastrar{
-    padding: 10px  134px ;
+    margin: 0;
+    box-shadow: 2px 2px 2px 2px;
+    background-color: greenyellow;
+    color: black;
 }

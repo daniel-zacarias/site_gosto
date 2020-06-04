@@ -1,0 +1,133 @@
+@font-face{
+    font-family: login;
+    src: url('fontes/GROBOLD.ttf');
+}
+span:nth-child(1){
+    font-family: login;
+}
+
+.login{
+    display: flex;
+    background: linear-gradient(to right,rgba(25,25,25) 900px
+    , white 50%);
+    align-items: center;
+    justify-content: space-around;
+    height: 800px;
+    background-color: rgb(220, 220, 220);
+}
+
+
+
+.formLogin, .formCadastro{
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px 40px 40px;
+    float: left;
+    height: 80%;
+    font-size: 2em;
+    border-radius: 24px;
+    border: none;
+    
+}
+
+.formCadastro{
+    background: none;
+    height: 800px;
+}
+
+
+
+.NomeLogin{
+    padding-right: 1px;
+    margin-bottom:40px ;
+    font-size: 1em;
+    transition: border 0.51s;
+}
+
+
+.senhaLogin{
+    
+    margin-bottom:25px ;
+    font-size: 1em;
+}
+
+.formLogin span, .formCadastro span{
+    width: 400px;
+    color: white;
+    font-size: 50px;
+    
+}
+
+
+
+.btnEntrar, .btncadastrar{
+    padding: 10px  155px ;
+    font-size: 30px;
+    cursor: pointer;
+    background: grey;
+    color: white;
+    border: none;
+    transition: color 0.5s;
+}
+
+select, option{
+    cursor: pointer;
+}
+.image{
+    margin-top: 20px;
+    background-image: url('https://www.nicepng.com/png/full/889-8898473_is-this-your-first-heart-lol-veigar-yordle.png');
+    height: 700px;
+    width: 722px;
+    background-repeat: no-repeat;
+}
+.btnEntrar:hover, .btncadastrar:hover{
+    
+    background: white;
+    color: black;
+    border: none;
+}
+
+.btnlogin{
+    position: relative;
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: FFF;
+    cursor: pointer;
+    box-shadow: 2px 1px;
+}
+
+ label{
+    position: absolute;
+    top: 0;
+  left: 10px;
+  width: 100%;
+  color: #000;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.campos{
+    margin-top: 20px;
+    position: relative;
+  width: 250px;
+  height: 100px;
+}
+
+input{
+    outline: 0;
+    appearance: none;
+    border: none;
+    background-color: whitesmoke;
+    
+    
+}
+.campos.ativar label{
+    top: -32px;
+    left: 0;
+    color: #fff;
+}
+
+.btncadastrar{
+    padding: 10px  134px ;
+}

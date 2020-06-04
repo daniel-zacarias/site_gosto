@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H-LOL</title>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 </head>
 
 <body>
@@ -13,40 +14,76 @@
         <a href="campeonato.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
         <ul class="nav">
             <a href="campeonato.html">
-                <li >Início</li>
+                <li>Início</li>
             </a>
             <a href="regras.html">
                 <li>Regras</li>
             </a>
             <a href="premio.html">
-                <li >Prêmios</li>
+                <li>Prêmios</li>
             </a>
             <a href="login.html">
-                <li >Login</li>
+                <li><button class="btnlogin">Login</button></li>
             </a>
             <a href="Cadastrar.html">
-                <li class="select">Cadastrar</li>
+                <li class="select"><button class="btncadastrar"> Cadastrar</button></li>
             </a>
+
         </ul>
     </div>
-    <div class="login">
+    <div class="Cadastro">
         <form action="" class="formCadastro">
+
             <span>CADASTRO</span><br>
-            <input type="text" class="NomeLogin" placeholder="Nome Completo"><br>
-            <input type="text" class="NomeLogin" placeholder="NickName"><br>
-            <input type="email" class="NomeLogin" placeholder="email"><br>
-            <span style="color: white; font-size: 30px;">Principal Lane</span>
-            <select aria-placeholder="Principal lane" class="NomeLogin" name="" id="">
+            <div class="campos">
+                <label for="NomeLogin">Nome:</label>
+
+                <input type="text" id="NomeLogin" required class="NomeLogin" autofocus>
+                
+            </div>
+
+            <div class="campos">
+                <label for="Login">Login:</label>
+
+                <input type="text" id="Login" required class="NomeLogin">
+                
+            </div>
+            <div class="campos">
+                <label for="Email">Email:</label>
+                <input type="email" required id="Email" class="NomeLogin">
+                
+            </div>
+            
+                <label style="color: white; font-size: 30px;" for="data">Data de nascimento</label>
+                <input type="date" class="NomeLogin" id="data" max="2020-01-01" value="2002-01-01">
+            
+            <!-- <label for="Lane">Principal Lane</label> -->
+            <select class="NomeLogin" id="Lane">
                 <option value="1">TOPO</option>
                 <option value="2">SELVA</option>
                 <option value="3">MEIO</option>
                 <option value="4">ATIRADOR</option>
                 <option value="5">SUPORTE</option>
-            </select>
-            <input type="password" placeholder="Senha" class="senhaLogin"><br>
-            <input type="password" placeholder="Confirmar Senha" class="senhaLogin"><br>
-            <button class="btncadastrar">Cadastrar</button><br>
-            <span style="font-size: 20px;">  Já criou uma conta? <a href="login.html" style="color: white;">Clique aqui</a></span>
+            </select><br>
+            <!-- <label for="time">Time</label> -->
+            <select class="NomeLogin"  id="time">
+                <option value="1">VERMELHO</option>
+                <option value="2">AZUL</option>
+                <option value="3">AMARELO</option>
+                <option value="4">ROXO</option>
+            </select><br>
+
+            <div class="campos">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" class="senhaLogin"><br>
+            </div>
+            <div class="campos">
+                <label for="confirm" class="confirmar">Confirmar senha:</label>
+                <input type="password" id="confirm" class="senhaLogin"><br>
+            </div>
+            <input class="btncadastrar" type="submit" value="Cadastrar"><br>
+            <span style="font-size: 20px;"> Já criou uma conta? <a href="login.html" style="color: white;">Clique
+                    aqui</a></span>
         </form>
 
     </div>
@@ -55,4 +92,18 @@
         <p style="color: white;">Feito por Daniel Soares 2020©</p>
     </div>
 </body>
+
 </html>
+<script>
+    const input = document.querySelectorAll("input");  //pega todos os elementos com a class .mudar(const valor contante)
+
+for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
+   input[i].addEventListener("focus", function () { // quando o campo texto for usado
+       this.offsetParent.classList.add("ativar"); // adicione a div pai a class .ativar
+   }) 
+   input[i].addEventListener("blur", function () { //quando o campo de texto deixar de ser usado
+       if (this.value == "") // caso valor do texto for ""
+           this.offsetParent.classList.remove("ativar");  //retira a class .ativar
+   })
+}
+</script>

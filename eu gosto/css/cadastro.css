@@ -1,0 +1,146 @@
+@font-face{
+    font-family: login;
+    src: url('fontes/GROBOLD.ttf');
+}
+
+
+
+.Cadastro{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 1100px;
+    background-color: rgb(255, 255, 255);
+}
+
+ .formCadastro{
+    width: 640px;
+    box-shadow: 5px 10px 15px 10px; 
+    background-color: rgba(0, 0, 0, 0.698);
+    padding: 20px 40px 40px;
+    
+    font-size: 2em;
+    border-radius: 24px;
+    border: rgba(0, 0, 0, 0.472) 3px solid;
+}
+
+.formCadastro{
+    background-color: rgba(0, 0, 0, 0.698);
+    height: 800px;
+}
+
+label{
+    color: white; 
+    font-size: 30px;
+    word-wrap: break-word;
+
+}
+
+
+
+.NomeLogin{
+    padding-right: 1px;
+    margin-bottom:40px ;
+    font-size: 1em;
+    transition: border 0.51s;
+}
+
+span:first-child{
+    font-family: login;
+}
+.senhaLogin{
+    
+    margin-bottom:25px ;
+    font-size: 1em;
+}
+
+.formLogin span, .formCadastro span{
+    width: 400px;
+    color: white;
+    font-size: 50px;
+}
+
+
+
+.btnEntrar, .btncadastrar{
+    padding: 10px  155px ;
+    font-size: 30px;
+    cursor: pointer;
+    background: grey;
+    color: white;
+    border: none;
+    transition: color 0.5s;
+}
+
+select, option{
+    cursor: pointer;
+}
+
+.btnEntrar:hover, .btncadastrar:hover{
+    
+    background: white;
+    color: black;
+    border: none;
+}
+
+
+.confirmar{
+    padding-left:0;
+    
+}
+ 
+
+span{
+    padding-left: 30%;
+}
+
+.btncadastrar{
+    padding: 10px  134px ;
+}
+
+
+label{
+    position: absolute;
+    top: 0;
+  left: 10px;
+  width: 100%;
+  color: #000;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.campos{
+    
+    position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+
+
+input{
+    outline: 0;
+    width: 100%;
+    appearance: none;
+    border-top:none ;
+    border-left:none ;
+    border-right:none ;
+    border-bottom: solid white;
+    background-color: whitesmoke;
+    background: none;
+    color:white;
+    
+}
+input[type=date]{
+    width: 50%;
+}
+
+.campos.ativar label{
+    top: -32px;
+    left: 0;
+    color: #fff;
+}
+
+.btncadastrar{
+    padding: 10px  134px ;
+}
