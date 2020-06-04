@@ -41,8 +41,9 @@ color: white;
 }
 
 .inicioVic{
+    background-repeat: no-repeat;
     background-image: url(imagens/derrota.PNG);
-
+    
     height: 720px;
     border: 1px white solid;
 

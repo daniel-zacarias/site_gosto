@@ -13,6 +13,14 @@
     
 }
 
+body{
+    height: 100%;
+    width: 100%;
+}
+.nav   li{
+    font-family: FFF;
+}
+
 .Menu{
     display: flex;
     justify-content: space-between;
@@ -21,6 +29,9 @@
     border-bottom: 0px;
     position: fixed;
     margin-bottom: -71px;
+    height: 87px;
+    z-index: 1;
+    
 }
 
 body{
@@ -39,7 +50,7 @@ body{
 .nav li{
     padding-right: 25px;
     color: white;
-    background-color:#23212888 ;
+    background-color:#232128 ;
     text-decoration: none;
     list-style: none;
     font-size: 2em;
@@ -67,6 +78,8 @@ body{
     .Menu,  .nav{
         display: flex;
         flex-wrap: wrap;
+        position: relative;
+        margin-top: 0;
     }
 
     body{
@@ -142,14 +155,14 @@ body{
 /* Login */
 
 
-.btncadastrar:first-child{
+ .btncadastro:first-child{
     padding: 10px 15px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 5px !important;
     font-family: FFF;
     cursor: pointer;
     margin: 0;
-    box-shadow: 2px 2px 2px 2px;
-    background-color: greenyellow;
+    box-shadow: 2px 1px !important;
+    background-color: greenyellow !important; 
     color: black;
 }

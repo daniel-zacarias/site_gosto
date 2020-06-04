@@ -4,10 +4,12 @@
 }
 
 
-
+body{
+    overflow-y: scroll;
+}
 .Cadastro{
     display: flex;
-    position: relative;
+    /* position: relative; */
     align-items: center;
     height: 1100px;
     background-color: rgb(255, 255, 255);
@@ -15,19 +17,20 @@
 
  .formCadastro{
     width: 640px;
-    box-shadow: 5px 10px 15px 10px; 
     background-color: rgba(0, 0, 0, 0.698);
     padding: 20px 40px 40px;
-    
+    height: 970px;
     font-size: 2em;
     border-radius: 24px;
-    border: rgba(0, 0, 0, 0.472) 3px solid;
+    border: none;
+    margin-left: 80px;
+    float: left;
 }
 
-.formCadastro{
+/* .formCadastro{
     background-color: rgba(0, 0, 0, 0.698);
-    height: 800px;
-}
+    
+} */
 
 label{
     color: white; 
@@ -36,7 +39,12 @@ label{
 
 }
 
-
+.image{
+    background: no-repeat url('https://i.ya-webdesign.com/images/arcade-drawing-ezreal.png');
+    float: right;
+    height: 700px;
+    width: 1711px;
+}
 
 .NomeLogin{
     padding-right: 1px;
@@ -91,15 +99,19 @@ select, option{
  
 
 span{
-    padding-left: 30%;
+    padding-left: 21%;
 }
 
 .btncadastrar{
     padding: 10px  134px ;
 }
 
-
-label{
+select{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    border: none;
+}
+.campos label{
     position: absolute;
     top: 0;
   left: 10px;
@@ -116,7 +128,19 @@ label{
   height: 100px;
 }
 
+.divSelect{
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: repeat(2, 75px);
+    
+}
 
+.divSelect select{
+    border-radius: 10px;
+}
+.divSelect select:focus{
+    border: 1px white solid;
+}
 
 input{
     outline: 0;
@@ -132,7 +156,9 @@ input{
     
 }
 input[type=date]{
-    width: 50%;
+    width: 475px;
+    position: static;
+    margin-top: 0;
 }
 
 .campos.ativar label{
@@ -141,6 +167,21 @@ input[type=date]{
     color: #fff;
 }
 
+
+
 .btncadastrar{
     padding: 10px  134px ;
+}
+
+
+#aceitar{
+    cursor: pointer;
+    width: 20px;
+    margin-top: 0;
+}
+
+#lblaceitar{
+    font-size: 25px;
+    width: 30px;
+    cursor: pointer;
 }

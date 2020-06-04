@@ -7,6 +7,7 @@
     <title>H-LOL</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/cadastro.css">
+    <script src="js/input.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
                 <li><button class="btnlogin">Login</button></li>
             </a>
             <a href="Cadastrar.html">
-                <li class="select"><button class="btncadastrar"> Cadastrar</button></li>
+                <li class="select"><button class="btncadastro"> Cadastrar</button></li>
             </a>
 
         </ul>
@@ -36,57 +37,61 @@
 
             <span>CADASTRO</span><br>
             <div class="campos">
-                <label for="NomeLogin">Nome:</label>
+                <label for="NomeLogin">Nome</label>
 
-                <input type="text" id="NomeLogin" required class="NomeLogin" autofocus>
+                <input type="text" id="NomeLogin" required class="NomeLogin" >
                 
             </div>
 
             <div class="campos">
-                <label for="Login">Login:</label>
+                <label for="Login">Nick</label>
 
                 <input type="text" id="Login" required class="NomeLogin">
                 
             </div>
             <div class="campos">
-                <label for="Email">Email:</label>
+                <label for="Email">Email</label>
                 <input type="email" required id="Email" class="NomeLogin">
                 
             </div>
-            
+            <div id="divData">
                 <label style="color: white; font-size: 30px;" for="data">Data de nascimento</label>
-                <input type="date" class="NomeLogin" id="data" max="2020-01-01" value="2002-01-01">
-            
-            <!-- <label for="Lane">Principal Lane</label> -->
-            <select class="NomeLogin" id="Lane">
+                
+            </div>
+            <div class="divSelect" id="DivSelect">
+            <label for="Lane" style="grid-column-end: 3; grid-column-start: 1">Sua Lane</label><br>
+            <label for="time"style="grid-column-end: 7; grid-column-start: 5" >Campeão favorito</label><br>
+            <select style="grid-column-end: 4; grid-column-start: 1; grid-row-start:2 ;" class="NomeLogin" id="Lane">
                 <option value="1">TOPO</option>
                 <option value="2">SELVA</option>
                 <option value="3">MEIO</option>
                 <option value="4">ATIRADOR</option>
                 <option value="5">SUPORTE</option>
             </select><br>
-            <!-- <label for="time">Time</label> -->
-            <select class="NomeLogin"  id="time">
-                <option value="1">VERMELHO</option>
-                <option value="2">AZUL</option>
-                <option value="3">AMARELO</option>
-                <option value="4">ROXO</option>
+            
+            <select class="NomeLogin" style="grid-column-end: 7; grid-column-start: 5; grid-row-start:2 ;" id="slcCampeao">
+             
             </select><br>
-
+            </div>
             <div class="campos">
-                <label for="senha">Senha:</label>
+                <label for="senha">Senha</label>
                 <input type="password" id="senha" class="senhaLogin"><br>
             </div>
             <div class="campos">
-                <label for="confirm" class="confirmar">Confirmar senha:</label>
+                <label for="confirm" class="confirmar">Confirmar senha</label>
                 <input type="password" id="confirm" class="senhaLogin"><br>
-            </div>
+            </div>            
+            <input type="checkbox" name="" id="aceitar">
+            <label for="aceitar" id="lblaceitar">Você leu as regras e concorda com elas?</label>
             <input class="btncadastrar" type="submit" value="Cadastrar"><br>
             <span style="font-size: 20px;"> Já criou uma conta? <a href="login.html" style="color: white;">Clique
                     aqui</a></span>
         </form>
-
+        <div class="image">
+        
+        </div>
     </div>
+    
     <div class="rodape">
         <img src="css/imagens/wixLogo.PNG" alt="">
         <p style="color: white;">Feito por Daniel Soares 2020©</p>
@@ -95,6 +100,7 @@
 
 </html>
 <script>
+ 
     const input = document.querySelectorAll("input");  //pega todos os elementos com a class .mudar(const valor contante)
 
 for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
@@ -105,5 +111,19 @@ for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
        if (this.value == "") // caso valor do texto for ""
            this.offsetParent.classList.remove("ativar");  //retira a class .ativar
    })
+
+   
+}
+    var dataAtual = new Date();
+    divData.innerHTML += `<input type="date" class="NomeLogin" id="data" max="${dataAtual.getFullYear()}-${(dataAtual.getMonth()+1).length > 1 ? (dataAtual.getMonth()+1) : "0"+(dataAtual.getMonth()+1) }-${(dataAtual.getDate()).length > 1 ? dataAtual.getDate(): "0"+ dataAtual.getDate()  }" value="2002-01-01">`;
+    const campeao = ['Aatrox', 'Ahri','Akali', 'Alistar' , 'Amumu','Anivia','Annie','Ashe' , 'Aphelios','Aurelion Sol','Azir',
+'Blitz','Brand','Braum','Caitlyn', 'Camille', 'Cassiopeia', "Cho'Gath", 'Corki', 'Darius', 'Diana', 'Dr. Mundo','Draven','Draven', 'Ekko', 'Elise','Evelynn', 'Ezreal','Fiddlesticks' ,'Fiora', 'Fizz', 'Galio', 'GangPlank','Garen', 'Gnar','Gragas', 'Graves', 'Hecarim', 'Heimerdinger', 'Illaoi',
+'Irelia', 'Ivern', 'Janna', 'Jarvan', 'Jax','jayce', 'Jhin', 'Jinx', "Kai'sa", 'Kalista', 'Karma', 'Karthus', 'Kassadin','Katarina', 'Kayle', 'Kayn', 'Kennen', "Kha'zix", 'Kindreds', 'Kled', "Kog'waw",'Kled', 'Lucian', 'Lulu', 'Lux', 'Malphite', 'Malzahar','Maokai', 'Master Yi', 'Miss Fortune', 'Mordekaiser', 'Morgana', 'Nami', 'Nasus', 'Nautilus','Neeko', 'NidaLee', 'Nocturne', 'Nunu e Willump', 'Olaf', 'Orianna', 'Ornn', 'Pantheon', 'Poppy', 'Pyke','Qiyana', 'Quinn','rakan', 'Rammus', "Rek'Sai", 'Renekton', 'Rengar','Riven','Rumble','Ryze','Sejuani','Senna','Sett','Shaco','Shen','Shyvana','Singed','Sion','Sivir','Skarner','Sona','Soraka','Swain','Sylas',
+'Syndra','Tahm Kench','Taliyah','Talon','Taric','Teemo','Thresh','Tristana','Trundle','Tryndamere','Twisted Fate','Twitch','Udyr','Urgot','Varus','Vayne','Veigar',"Vel'Koz",'Vi','Viktor','Vladimir','Volibear','Warwick','Wukong',
+'Xayah','Xerath','Xin Zhao','Yasuo','Yorick','Yuumi','Zac','Zed','Ziggs','Zillean', 'Zoe', 'Zyra'
+];
+
+for(let cont = 0;cont< campeao.length; cont++){
+    slcCampeao.innerHTML += `<option value="${cont+1}">${campeao[cont]}</option>` 
 }
 </script>
