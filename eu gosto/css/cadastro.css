@@ -2,7 +2,10 @@
     font-family: login;
     src: url('fontes/GROBOLD.ttf');
 }
-
+@font-face{
+    font-family: college;
+    src: url(fontes/Collegier.ttf);
+}
 
 body{
     overflow-y: scroll;
@@ -38,7 +41,7 @@ label{
     color: white; 
     font-size: 30px;
     word-wrap: break-word;
-
+    font-family:  fantasy;
 }
 
 .image{
@@ -53,10 +56,12 @@ label{
     margin-bottom:40px ;
     font-size: 1em;
     transition: border 0.51s;
+    color: black;
 }
 
 span:first-child{
     font-family: login;
+    margin-bottom: 200px;
 }
 .senhaLogin{
     
@@ -112,6 +117,8 @@ select{
     background-color: rgb(25, 25, 25);
     color: white;
     border: none;
+    font-family: fantasy;
+    height: 40px;
 }
 .campos label{
     position: absolute;
@@ -124,7 +131,7 @@ select{
 }
 
 .campos{
-    
+    top: 10px;
     position: relative;
   width: 100%;
   height: 100px;
@@ -138,7 +145,7 @@ select{
 }
 
 .divSelect select{
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .divSelect select:focus{
     border: 1px white solid;
@@ -155,6 +162,7 @@ input{
     background-color: whitesmoke;
     background: none;
     color:white;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 input[type=date]{
@@ -167,10 +175,13 @@ input[type=date]{
     top: -32px;
     left: 0;
     color: #fff;
+
 }
 
 
-
+label:last-child{
+    font-style: normal;
+}
 .btncadastrar{
     padding: 10px  134px ;
 }
@@ -186,4 +197,5 @@ input[type=date]{
     font-size: 25px;
     width: 30px;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
 }
