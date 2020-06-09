@@ -15,19 +15,19 @@
     <div class="Menu">
         <a href="campeonato.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
         <ul class="nav">
-            <a href="campeonato.html">
-                <li >Início</li>
-            </a>
-            <a href="regras.html">
-                <li>Regras</li>
-            </a>
-            <a href="premio.html">
-                <li >Prêmios</li>
-            </a>
-            <a href="login.html"><li><button class="btnlogin">Login</button></li></a>
-            <a href="Cadastrar.html">
-                <li><button class="btncadastro"> Cadastrar</button></li>
-            </a>
+            
+                <li ><a href="campeonato.html">Início</a></li>
+            
+            
+                <li><a href="regras.html">Regras</a></li>
+            
+            
+                <li ><a href="premio.html">Prêmios </a></li>
+           
+            <li><a href="login.html"><button class="btnlogin">Login</button></a></li>
+            
+                <li><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            
         </ul>
     </div>
     <div class="login">
@@ -41,7 +41,7 @@
             <label for="senha">Senha</label>
             <input type="password" id="senha" class="senhaLogin"><br>
             </div>
-            <input type="button" class="btnEntrar" value="Entrar"><br>
+            <input type="submit" class="btnEntrar" value="Entrar"><br>
             <span style="font-size: 35px;">  Não tem login? <a style="color: white;" href="Cadastrar.html">Clique aqui</a></span>
         </form>
         <div class="image"></div>
@@ -54,7 +54,6 @@
 </html>
 <script>
      const input = document.querySelectorAll("input");  //pega todos os elementos com a class .mudar(const valor contante)
-
 for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
     input[i].addEventListener("focus", function () { // quando o campo texto for usado
         this.offsetParent.classList.add("ativar"); // adicione a div pai a class .ativar

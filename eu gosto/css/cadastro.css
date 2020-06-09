@@ -146,6 +146,7 @@ select{
 
 .divSelect select{
     border-radius: 5px;
+    color: #fff;
 }
 .divSelect select:focus{
     border: 1px white solid;
@@ -175,7 +176,7 @@ input[type=date]{
     top: -32px;
     left: 0;
     color: #fff;
-
+    font-size: 24px;
 }
 
 

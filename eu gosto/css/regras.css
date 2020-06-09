@@ -4,10 +4,11 @@
     background-color: #232128d9;
     justify-content: center;
     margin-top: 50px ;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     margin-left: 560px;
     border: #9c898d 3px solid;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .regras span{

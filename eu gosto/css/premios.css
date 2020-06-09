@@ -4,14 +4,20 @@
     
 }
 
+
+
 .divisao, .divisao2{
     height: 25%;
+    display: flex;
 }
 
+.divisao{
+    justify-content: center;
+}
 .divisao2{
     
     justify-content: space-around;
-    display: flex;
+    
     
 }
 
@@ -26,6 +32,7 @@
 .primeiro{
     background-color: #232128d9;
     border: gold 5px solid;
+    
 }
 
 .segundo{
@@ -46,6 +53,7 @@
 .divisao span{
     font-size: 30px;
     color: white;
+    display: flex;
 }
  .divisao2 span{
     font-size: 32px;
