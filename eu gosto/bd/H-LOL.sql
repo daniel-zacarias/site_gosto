@@ -35,8 +35,10 @@ drop table jogador;
 insert into rota values(1,'TOPO') , (2,'SELVA'),(3,'MEIO'), (4,'ATIRADOR'),(5,'SUPORTE');
 
 INSERT INTO campeao value ( null ,'Aatrox');
+desc campeao;
 
-select * from campeao;
+select *  from campeao; 
+
 
 insert into jogador values(1,'Daniel Soares Zacarias dos Santos','DSZDS','DanielSantos19.anjo@hotmail.com','1234','2002-11-20',1, 1, null);
 

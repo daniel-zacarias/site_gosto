@@ -91,12 +91,12 @@ button > a{
     .Menu,  .nav{
         display: flex;
         flex-wrap: wrap;
-        position: relative;
         margin-top: 0;
+        height: auto;
     }
 
     body{
-        margin-top: 200px;
+        margin-top: 300px;
     }
 }
 

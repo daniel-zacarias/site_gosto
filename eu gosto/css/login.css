@@ -16,6 +16,16 @@ span:nth-of-type(1){
     background-color: rgb(220, 220, 220);
 }
 
+@media only screen and (max-width: 600px){
+
+    .login{
+        background: black;
+    }
+
+    body{
+        margin-top: 200px;
+    }
+}
 
 
 .formLogin, .formCadastro{

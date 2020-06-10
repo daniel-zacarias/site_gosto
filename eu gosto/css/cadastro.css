@@ -32,6 +32,21 @@ a:last-child:hover{
     float: left;
 }
 
+
+@media only screen and (max-width: 600px){
+    .Cadastro{
+        width: 100%;
+        height: 100%;
+    }
+    .formCadastro{
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+        margin-top: 400px;
+    }
+}
 /* .formCadastro{
     background-color: rgba(0, 0, 0, 0.698);
     
@@ -74,6 +89,7 @@ span:first-child{
     color: white;
     font-size: 50px;
 }
+
 
 
 

@@ -42,12 +42,13 @@
     .regras span{
         font-size: 30px;
         text-align: center;
+        margin-top: 0;
     }
     
     
     .regras li{
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 10px;
+        margin-bottom: 5px;
         color: white;
     }
     
