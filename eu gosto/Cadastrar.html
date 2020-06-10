@@ -40,7 +40,6 @@
                 <label for="NomeLogin">Nome</label>
 
                 <input type="text" id="NomeLogin" required class="NomeLogin" >
-                
             </div>
 
             <div class="campos">
@@ -114,6 +113,8 @@ for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
 
    
 }
+
+
     var dataAtual = new Date();
     divData.innerHTML += `<input type="date" class="NomeLogin" id="data" max="${dataAtual.getFullYear()}-${(dataAtual.getMonth()+1).length > 1 ? (dataAtual.getMonth()+1) : "0"+(dataAtual.getMonth()+1) }-${(dataAtual.getDate()).length > 1 ? dataAtual.getDate(): "0"+ dataAtual.getDate()  }" value="2002-01-01">`;
     
@@ -127,4 +128,9 @@ for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
 for(let cont = 0;cont< campeao.length; cont++){
     slcCampeao.innerHTML += `<option value="${cont+1}">${campeao[cont]}</option>` 
 }
+
+function teste(){
+    
+}
+
 </script>
