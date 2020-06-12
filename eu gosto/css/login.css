@@ -2,7 +2,7 @@
     font-family: login;
     src: url('fontes/GROBOLD.ttf');
 }
-span:nth-of-type(1){
+span:nth-child(1){
     font-family: login;
 }
 

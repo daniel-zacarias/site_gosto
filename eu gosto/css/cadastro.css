@@ -14,7 +14,6 @@ body{
     display: flex;
     /* position: relative; */
     align-items: center;
-    height: 1100px;
     background-color: rgb(255, 255, 255);
 }
 a:last-child:hover{
@@ -201,9 +200,30 @@ label:last-child{
 }
 .btncadastrar{
     padding: 10px  134px ;
+    width: 100%;
 }
 
+#divErros{
+    background-color: #FF766A;
+    border: solid maroon 2px;
+    border-radius: 20px;
+    display: none;
+    transition: 1s all;
+}
 
+#divErros ul{
+    margin: 0;
+}
+
+#divErros ul li{
+    padding: 0;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+#divErros ul li::before{
+    content: '⚠ ';
+}
 #aceitar{
     cursor: pointer;
     width: 20px;
@@ -211,8 +231,18 @@ label:last-child{
 }
 
 #lblaceitar{
-    font-size: 25px;
+    font-size: 20px;
     width: 30px;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.popUp{
+    margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
 }

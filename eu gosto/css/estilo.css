@@ -107,7 +107,9 @@ button > a{
     font-family: FFF;
     cursor: pointer;
     box-shadow: 2px 1px;
+    display: block;
 }
+
 /* .Logo{
     font-family: Averia;
     font-size: 145px;
@@ -178,4 +180,9 @@ button > a{
     box-shadow: 2px 1px !important;
     background-color: greenyellow !important; 
     color: black;
+    display: block;
 }
+
+/* .btnlogin,.btncadastro{
+    display: none !important;
+} */

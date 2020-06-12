@@ -36,7 +36,8 @@ insert into rota values(1,'TOPO') , (2,'SELVA'),(3,'MEIO'), (4,'ATIRADOR'),(5,'S
 
 INSERT INTO campeao value ( null ,'Aatrox');
 desc campeao;
-
+ALTER USER 'teste2' IDENTIFIED WITH mysql_native_password BY 'bandtec';
+flush privileges;
 select *  from campeao; 
 
 
