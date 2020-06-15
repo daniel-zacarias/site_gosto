@@ -8,12 +8,14 @@
 }
 
 body{
-    overflow-y: scroll;
+    background-color: rgb(255, 255, 255);
+    
 }
 .Cadastro{
     display: flex;
     /* position: relative; */
     align-items: center;
+    margin-bottom: 80px;
     background-color: rgb(255, 255, 255);
 }
 a:last-child:hover{
@@ -224,6 +226,12 @@ label:last-child{
 #divErros ul li::before{
     content: '⚠ ';
 }
+
+#divErros h1{
+    margin: 0;
+    text-align: center;
+    font-size: 38px;
+}
 #aceitar{
     cursor: pointer;
     width: 20px;
@@ -237,12 +245,45 @@ label:last-child{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.sobreposicao{
+    position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 2;
+  display: none;
+}
+
+
 .popUp{
     margin: 70px auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
   width: 30%;
+
   position: relative;
   transition: all 5s ease-in-out;
+
+}
+.popUp .fecharBTN {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.popUp span{
+    margin-top:0 ;
+}
+.popUp .fecharBTN:hover{
+    color: red;
+}
+.popUp p {
+    font-size: 20px;
 }

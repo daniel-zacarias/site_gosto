@@ -1,10 +1,10 @@
 var mysql = require('mysql');
-
-var con = mysql.createConnection({
+var valores = require('./animacao')
+ var con = mysql.createConnection({
     host     : 'localhost',
     port     : '3306',
-    user     : 'root',
-    password : 'bandtec',
+    user     : 'Admin',
+    password : 'admin',
     database : 'hLol'
   });
 
@@ -18,12 +18,13 @@ var con = mysql.createConnection({
   con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    let sql = 'select * from campeao';
-    con.query("SELECT * FROM campeao", function (err, result, fields) {
+    let sql = 'insert into jogador(nomeJogador,Nick,Email,senha,dataNascimento,fkrota,fkcampeao ) values(null,?)';
+    con.query(sql, valores, function(err, result) {
       if (err) throw err;
-      console.log(result[17].NomeCampeao);
-    });
+      console.log("Number of records inserted: " + result.affectedRows);
   });
+})
+  con.end();
 
 
   
@@ -33,4 +34,4 @@ module.exports = con;
 
 // console.log(campeao.length);
 
-
+  

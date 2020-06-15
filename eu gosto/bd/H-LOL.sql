@@ -11,12 +11,14 @@ create table rota(
 idRota int primary key ,
 NomeRota varchar(8));
 
+select * from rota;
+
 create table timeLOL(
 idTime int primary key,
 NomeTIme varchar(45));
 
 create table jogador(
-idJogador int primary key,
+idJogador int primary key auto_increment,
 nomeJogador varchar(45), 
 Nick varchar(30),
 email varchar(45),
@@ -32,11 +34,14 @@ foreign key (fktime) references timeLOL(idTime)
 
 drop table jogador;
 
+
+
+ALTER USER 'teste2' IDENTIFIED WITH mysql_native_password BY 'bandtec';
+
 insert into rota values(1,'TOPO') , (2,'SELVA'),(3,'MEIO'), (4,'ATIRADOR'),(5,'SUPORTE');
 
-INSERT INTO campeao value ( null ,'Aatrox');
 desc campeao;
-ALTER USER 'teste2' IDENTIFIED WITH mysql_native_password BY 'bandtec';
+ALTER USER 'teste2'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Bandtec123';
 flush privileges;
 select *  from campeao; 
 

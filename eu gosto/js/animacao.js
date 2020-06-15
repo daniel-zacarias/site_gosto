@@ -1,6 +1,10 @@
+
+
 var erros = [];
 
 Opcoes();
+
+
 
 function Opcoes() {
     const campeao = ['Aatrox', 'Ahri', 'Akali', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Aphelios', 'Ashe', 'Aurelion Sol', 'Azir', 'Bardo',
@@ -36,6 +40,7 @@ function disfocar(elemento){
     // })
 // };
 function verErros(erros){
+    
     divErros.style.display = 'block';
     let lista = document.getElementById('listaErros');
     lista.innerHTML = '';
@@ -46,11 +51,45 @@ function verErros(erros){
     }
 }
 
+function cadastro(valores){
+    divErros.style.display = 'none';
+    
+    // let sql = 'insert into jogador(nomeJogador,Nick,Email,senha,dataNascimento,fkrota,fkcampeao ) values(null,?)';
+    
+    idPop.style.display = 'block';
+    return valores;
+}
+
+
+function compararDatas(){
+    var date1 = new Date(data.value);
+    var date2 = new Date();
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var diffDays = parseInt(timeDiff / (1000 * 3600 * 24*365));
+    return diffDays;
+}
+
+function validarLogin(){
+    let input = document.querySelectorAll('input');
+    erros = [];
+    if(input[0].value.trim()  == ''   ){
+        erros.push('Digite o Nick.');
+    }
+    if(input[1].value.trim() == ''){
+        erros.push('Digite uma senha.');
+    }
+    if(erros.length > 0){
+        for(let cont = 0; cont < erros.length ; cont++){
+            alert(erros[cont]);
+        }
+    }
+}
+
 function validarCadastro(){
     let input = document.querySelectorAll('input');
     erros = [];
     if(input[0].value.trim()  == '' || input[0].value.trim().split(" ").length < 2  ){
-        erros.push('Erro de formato: Precisa de pelo menos um sobrenome.')
+        erros.push('Erro de formato: Precisa de nome e sobrenome.')
     }
     if(input[1].value.trim()  == ''){
         erros.push('Erro de formato: NickName Obrigatório.')
@@ -61,18 +100,28 @@ function validarCadastro(){
     }
 
     if(input[4].value.trim() == ''){
-        erros.push('Digite uma senha');
+        erros.push('Digite uma senha.');
     }
     else if(input[5].value.trim() == '' || input[4].value != input[5].value){
-        erros.push('Senhas não são iguais');
+        erros.push('Senhas não são iguais.');
     }
-
+    if(compararDatas() < 18 ){
+        erros.push(`Você tem ${compararDatas()} anos, a idade mínima é 18.`);
+    }
     if(!input[6].checked){
-        erros.push('Você deve concordar com os termos');
+        erros.push('Você deve concordar com os termos.');
     }
 
     if(erros.length == 0){
-        alert('Cadastro feito com sucesso')
+        let select = document.querySelectorAll('select');
+        let valores = [];
+        for (let i = 0; i < input.length-1; i++ ) {
+            valores.push(input[i].value);
+        }
+        for (let i = 0;i < select.length; i++){
+            valores.push(select[i].value);
+        }
+        cadastro(valores);
     }
     else{
         verErros(erros);
@@ -84,7 +133,3 @@ function campeoes(){
 
     return campeao;
 }
-
-
-
-

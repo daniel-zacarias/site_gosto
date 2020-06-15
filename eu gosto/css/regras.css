@@ -1,14 +1,16 @@
 .regras{
     height: auto;
     width: 720px;
+    position: relative;
     background-color: #232128d9;
     justify-content: center;
     margin-top: 50px ;
     margin-bottom: 50px;
-    margin-left: 560px;
+    left: 50%;
     border: #9c898d 3px solid;
     display: flex;
     flex-direction: column;
+    transform: translateX(-50%);
 }
 
 .regras span{

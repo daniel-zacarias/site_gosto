@@ -26,7 +26,8 @@
     height:  500px;
     background-color: white;
     text-align: center;
-    min-width: 500px;
+    position: relative;
+    min-width: 350px;
 }
 
 .primeiro{
@@ -63,6 +64,9 @@
 
 .imagem_premios{
     height: 250px;
+    position: absolute;
+    top: 70%;
+    transform: translate(-50%,-50%);
 }
 .faixa {
     width: 250px;

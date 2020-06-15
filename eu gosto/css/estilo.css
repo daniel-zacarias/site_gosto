@@ -30,15 +30,17 @@ body{
     width: 100%;
     border-bottom: 0px;
     position: fixed;
-    margin-bottom: -71px;
-    height: 87px;
+    height: auto;
     z-index: 1;
+    flex-wrap: wrap;
     
 }
 
+
 body{
     background-color: black;
-    margin-top: 90px;
+    margin-top: 190px;
+    width: 100%;
 }
 
 .logo{
@@ -134,7 +136,7 @@ button > a{
     text-align: center;
     margin-bottom: 0px;
     flex-wrap: wrap;
- 
+    width: 100%;
 
 
 }
@@ -142,6 +144,7 @@ button > a{
 .rodape p{
     margin-left: 250px ;
     font-size: 2em;
+    color:white ;
 }
 
 

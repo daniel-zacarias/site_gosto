@@ -108,7 +108,7 @@ color: white !important;
     font-size: 8em;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1000px){
     .inicioVic {
         display: none;
     }
@@ -124,6 +124,9 @@ color: white !important;
     .square p{
         font-size: 11px;
     }
+    .Container{
+        height: auto;
+    }
     .square{
         display: flex;
         flex-wrap: wrap;
@@ -131,8 +134,8 @@ color: white !important;
     }
 
     .square div{
-        height: 200px;
-        width: 200px;
+        height: 350px;
+        width: 360px;
         margin: 0px;
         background-color: #a5aead;
         border: white 2px dotted;

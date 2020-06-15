@@ -11,12 +11,10 @@ for(let cont = 0;cont< campeao.length; cont++){
     slcCampeao.innerHTML += `<option value="${cont+1}">${campeao[cont]}</option>` 
 }
 
-let insercao = function insercao() {
-    let sql = 'insert into campeao values(null,?)';
-    for(let cont = 1 ; cont < campeao.length; cont++){
-    db.query(sql,[input[0],input[1],input[2],input[3], situacao], function(err, result) {
+function insercao() {
+    let sql = 'insert into jogador(nomeJogador,Nick,Email,senha,dataNascimento,fkrota,fkcampeao ) values(null,?)';
+    db.query(sql,[], function(err, result) {
         if (err) throw err;
         console.log("Number of records inserted: " + result.affectedRows);
       });
-    }
 }
