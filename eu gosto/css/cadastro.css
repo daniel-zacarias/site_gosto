@@ -142,8 +142,8 @@ select{
     top: 0;
   left: 10px;
   width: 100%;
-  color: #000;
-  transition: 0.2s all;
+  color: #fff;
+  transition: 0.5s all;
   cursor: text;
 }
 
@@ -192,8 +192,7 @@ input[type=date]{
 .campos.ativar label{
     top: -32px;
     left: 0;
-    color: #fff;
-    font-size: 24px;
+    /* font-size: 24px; */
 }
 
 
