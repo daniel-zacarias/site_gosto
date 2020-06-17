@@ -71,17 +71,19 @@ function compararDatas(){
 
 function validarLogin(){
     let input = document.querySelectorAll('input');
-    erros = [];
+    erros = '';
     if(input[0].value.trim()  == ''   ){
-        erros.push('Digite o Nick.');
+        erros = 'Nome ou Login inválidos*';
     }
     if(input[1].value.trim() == ''){
-        erros.push('Digite uma senha.');
+        erros = 'Nome ou Login inválidos*';
     }
-    if(erros.length > 0){
-        for(let cont = 0; cont < erros.length ; cont++){
-            alert(erros[cont]);
-        }
+    if(erros != ''){
+        let p = document.createElement('p');
+        let div = document.getElementById('erros');
+        div.innerHTML = '';
+        p.innerHTML = erros;
+        div.appendChild(p);
     }
 }
 

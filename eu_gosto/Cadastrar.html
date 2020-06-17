@@ -34,7 +34,7 @@
     </div>
     <div class="Cadastro">
         <div class="formCadastro">
-        <form>
+        <form method="POST">
 
             <span>CADASTRO</span><br>
             <div class="campos">
@@ -84,14 +84,15 @@
             <input type="checkbox" name="" id="aceitar">
             <label for="aceitar" id="lblaceitar">Você leu as regras e concorda com elas?</label>
             <!-- <input class="btncadastrar" type="submit" onclick="validar()" value="Cadastrar"><br> -->
+            <div id="divErros">
+                <h1>Erro</h1>
+                <ul id="listaErros">
+    
+                </ul>
+            </div>
+            <button type="button" class="btncadastrar" onclick="validarCadastro()" >Cadastrar</button><br>
         </form>
-        <div id="divErros">
-            <h1>Erro</h1>
-            <ul id="listaErros">
-
-            </ul>
-        </div>
-        <button class="btncadastrar" onclick="validarCadastro()" >Cadastrar</button><br>
+        
         <span style="font-size: 20px;"> Já criou uma conta? <a href="login.html" style="color: white;">Clique
             aqui</a></span>
         </div>

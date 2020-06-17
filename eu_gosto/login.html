@@ -32,8 +32,10 @@
     </div>
     <div class="login">
         <div class="formLogin">
-        <form >
+        <form method="POST">
+            
             <span>LOGIN</span><br>
+            <div id="erros"></div>
             <div class="campos">
             <label for="login">Nick</label>
             <input type="text" id="login" onfocus="focar(this)" onblur="disfocar(this)"  class="NomeLogin " ><br>
@@ -42,11 +44,11 @@
             <label for="senha">Senha</label>
             <input type="password" id="senha" onfocus="focar(this)" onblur="disfocar(this)"  class="senhaLogin"><br>
             </div>
-            
-        </form>
-        <button class="btnEntrar" onclick="validarLogin()">Entrar</button><br>
+            <button class="btnEntrar" type="button" onclick="validarLogin()">Entrar</button><br>
             <span style="font-size: 35px;">  Não tem login? <a style="color: white;" href="Cadastrar.html">Clique aqui</a></span>
         </div>
+        </form>
+        
         <div class="image"></div>
     </div>
     <div class="rodape">
