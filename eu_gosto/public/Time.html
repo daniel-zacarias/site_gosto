@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-LOL</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/campeonato.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/time.css">
+    <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
+    <script src="funcoes.js"></script>
+    <script defer>
+
+    </script>
+</head>
+
+<body onload="popular()">
+    <div class="Menu">
+        <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
+        <ul class="nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="regras.html">Regras</a></li>
+            <li><a href="premio.html">Prêmios</a></li>
+            <li class="times select"><a href="Time.html">Times</a></li>
+            <li id='btns'><a href="login.html"><button class="btnlogin">Login</button></a></li>
+
+            <li id='btns'><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            <li id="btnPerfil" style="display: none;"><button class="btncadastro" onclick="popUp.style.display='block'">
+                    Meu Perfil</button></li>
+        </ul>
+    </div>
+    <!-- cabeçalho -->
+    <div class="exibir" onload="popular()">
+        <div class="contentTime">
+
+        </div>
+    </div>
+    <!-- Rodapé -->
+    <div class="rodape">
+        <img src="css/imagens/wixLogo.PNG" alt="">
+        <p>Feito por Daniel Soares 2020©</p>
+    </div>
+    <div class="sobreposicao" id="popUp" style="display: none;">
+        <div class="perfil">
+            <span>Olá, <span id="Nick_Perfil">DSZDS</span></span>
+
+            <a class="fecharBTN" href="#" onclick="popUp.style.display='none'">&times;</a> <br>
+            <div class="infos">
+                <div class="rota">
+                    <span>Rota Principal</span><br>
+                    <img src="css/imagens/selva.png" id="rotaIMG" alt=""><br>
+                    <span id="rotaNome">Selva</span>
+                </div>
+                <div class="campeaoFav">
+                    <span>Campeão Favorito</span><br>
+                    <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
+                    <div class="time">
+                        <span>TIME</span><br>
+                        <span>EM MANUTENÇÃO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="DivLogOut"><a href="index.html" onclick="logoff()" class="btnLogOut">Sair do perfil</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script defer>
+    let times = {
+        id: [],
+        nome: []
+    }
+
+
+    function popular() {
+        fetch('/times').then(resposta => {
+            if (resposta.ok) {
+                times.id = [];
+                times.nome = [];
+                resposta.json().then(json => {
+                    for (i = 0; i < json.length; i++) {
+                        times.id.push(json[i].id);
+                        times.nome.push(json[i].nome);
+                    }
+                    elementos(times);
+                });
+
+            }
+        })
+    }
+    function elementos(dados) {
+        let table = document.createElement('table');
+        // let tr1 = document.createElement('tr');
+        // let th = document.createElement('th');
+        // table.appendChild(tr1);
+        // tr1.appendChild
+        for (i = 0; i < dados.id.length; i++) {
+
+            let tr = document.createElement('tr');
+            
+            if (i == 0) { 
+                let tr = document.createElement('tr');
+                let th = {
+                    id : document.createElement('th'),
+                    nome: document.createElement('th')
+                }
+                th.id.innerHTML = '#';
+                th.nome.innerHTML = 'Nome do Time'
+                table.appendChild(tr);
+                tr.appendChild(th.id);
+                tr.appendChild(th.nome);
+            }
+            table.appendChild(tr);
+            tr.classList.add('TabelaTimes')
+            let td = {
+                id: document.createElement('td'),
+                nome: document.createElement('td')
+            };
+            td.id.innerHTML = dados.id[i];
+            td.nome.innerHTML = dados.nome[i];
+            tr.appendChild(td.id);
+            tr.appendChild(td.nome);
+            document.getElementsByClassName('contentTime')[0].appendChild(table);
+        }
+    }
+    verificar_autenticacao();
+</script>

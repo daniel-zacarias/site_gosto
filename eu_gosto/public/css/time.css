@@ -1,0 +1,49 @@
+@font-face{
+    font-family: Averia;
+    src: url(fontes/AveriaSerifLibre-Bold.ttf);
+    font-family: FFF;
+    src: url(fontes/FFFFORWA.TTF);
+}
+
+body{
+    margin-top: 170px;
+    background-color: white;
+}
+.exibir{
+    display: flex;
+    justify-content: center;
+    
+}
+ td, th {  
+    border: 1px solid #fff;
+    text-align: left;
+  }
+.exibir table{
+  width: 600px;
+  border-color: white;
+  padding: 30px;
+}
+
+.contentTime{
+    border: black 2px solid;
+    border-radius:25px ;
+    margin-bottom: 30px;
+}
+
+.exibir th{
+    font-family: FFF;
+}
+.exibir td, th {
+    color: black;
+    font-size: 50px;
+}
+
+.exibir tr td:nth-of-type(1) {
+
+    border: none !important;
+    font-family: FFF;
+}
+
+.exibir div p:nth-of-type(2) {
+    color: red;
+}

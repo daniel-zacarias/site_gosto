@@ -30,6 +30,7 @@ function verificar_autenticacao() {
         btns[0].style.display = 'none';
         btns[1].style.display = 'none';
         btnPerfil.style.display = 'block';
+        document.getElementsByClassName('times')[0].style.display = 'block'
         }catch{}
         Nick_Perfil.innerHTML = nome_usuario;
         rotaIMG.src = `css/imagens/${Rota_usuario}.png`;

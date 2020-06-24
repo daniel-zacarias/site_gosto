@@ -16,7 +16,7 @@ router.post('/autenticar', function(req, res, next) {
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
-		model: Usuario
+		model: Usuario 
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
 
