@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/regras.css">
     <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/perfil.css">
+    <script src="funcoes.js"></script>
 </head>
 <body background="css/imagens/triangulo.PNG">
     <div class="Menu">
-        <a href="campeonato.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
+        <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
         <ul class="nav">
-            <li ><a href="campeonato.html" >Início</a></li>
+            <li ><a href="index.html" >Início</a></li>
             <li class="select"><a href="regras.html">Regras</a></li>
             <li><a href="premio.html">Prêmios</a></li>
-            <li><a href="login.html"><button class="btnlogin">Login</button></a></li>
+            <li id='btns'><a href="login.html"><button class="btnlogin">Login</button></a></li>
             
-            <li><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            <li id='btns'><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            <li id="btnPerfil"style="display: none;" ><button class="btncadastro"  onclick="popUp.style.display='block'" > Meu Perfil</button></li>
         </ul>
     </div>
      <!-- Cabeçalho -->
@@ -36,6 +39,7 @@
                     <li>Caso o número de times sejam impares, vamos sortear 2 times para a melhor de três, e iremos transmitir as partidas, o time que perder 
                         está fora do campeonato, e o outro continuará.
                     </li>
+                    <li>Não iremos entregar skins Lendárias, Ultimates, Prestígios, Míticas ou Legados</li>
                 </ol>
                 <p>Assinado organizadores da H-LOL</p>
          </div>
@@ -45,5 +49,32 @@
         <img src="css/imagens/wixLogo.PNG" alt="">
         <p>Feito por Daniel Soares 2020©</p>
     </div>
+    <div class="sobreposicao" id="popUp"  style="display: none;">
+        <div class="perfil">
+            <span>Olá, <span id="Nick_Perfil">DSZDS</span></span>
+            
+            <a class="fecharBTN" href="#" onclick="popUp.style.display='none'">&times;</a> <br>
+            <div class="infos">
+            <div class="rota">
+                <span>Rota Principal</span><br>
+                <img src="css/imagens/selva.png" id="rotaIMG" alt=""><br>
+                <span id="rotaNome">Selva</span>
+            </div>
+            <div class="campeaoFav">
+                <span>Campeão Favorito</span><br>
+                <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
+                <div class="time">
+                    <span>TIME</span><br>
+                    <span>EM MANUTENÇÃO</span> 
+                </div>
+            </div>
+             </div>
+             <div class="DivLogOut"><a href="" onclick="logoff()" class="btnLogOut">Sair do perfil</a></div>
+        </div>
+        </div>
+        
 </body>
 </html>
+<script>
+    verificar_autenticacao()
+</script>

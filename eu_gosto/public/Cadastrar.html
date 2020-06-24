@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
-    <script src="js/animacao.js"></script>
+    <script src="animacao.js"></script>
+    <script src="funcoes.js"></script>
 </head>
 
 <body>
     <div class="Menu" >
-        <a href="campeonato.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
+        <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
         <ul class="nav" >
-            <a href="campeonato.html">
+            <a href="index.html">
                 <li>Início</li>
             </a>
             <a href="regras.html">
@@ -34,24 +35,24 @@
     </div>
     <div class="Cadastro">
         <div class="formCadastro">
-        <form method="POST">
+        <form  id="FormularioC" method="POST" onsubmit="return cadastrar()" >
 
             <span>CADASTRO</span><br>
             <div class="campos">
                 <label for="NomeLogin">Nome</label>
 
-                <input type="text" id="NomeLogin" onfocus="focar(this)" onblur="disfocar(this)" class="NomeLogin" >
+                <input type="text" id="NomeLogin" name="Nome" onfocus="focar(this)" onblur="disfocar(this)" class="NomeLogin" >
             </div>
 
             <div class="campos">
                 <label for="Login">Nick</label>
 
-                <input type="text" id="Login" onfocus="focar(this)" onblur="disfocar(this)" class="NomeLogin">
+                <input type="text" id="Login" onfocus="focar(this)" name="NickC" onblur="disfocar(this)" class="NomeLogin">
                 
             </div>
             <div class="campos">
                 <label for="Email">Email</label>
-                <input type="email" onfocus="focar(this)" onblur="disfocar(this)" id="Email" class="NomeLogin">
+                <input type="email" onfocus="focar(this)" name="Email" onblur="disfocar(this)" id="Email" class="NomeLogin">
                 
             </div>
             <div id="divData">
@@ -61,7 +62,7 @@
             <div class="divSelect" id="DivSelect">
             <label for="Lane" style="grid-column-end: 3; grid-column-start: 1">Principal Lane</label><br>
             <label for="time"style="grid-column-end: 7; grid-column-start: 5" >Campeão favorito</label><br>
-            <select style="grid-column-end: 4; grid-column-start: 1; grid-row-start:2 ;" class="NomeLogin" id="Lane">
+            <select style="grid-column-end: 4; grid-column-start: 1; grid-row-start:2 ;" name="Rota" class="NomeLogin" id="Lane">
                 <option value="1">TOPO</option>
                 <option value="2">SELVA</option>
                 <option value="3">MEIO</option>
@@ -69,13 +70,13 @@
                 <option value="5">SUPORTE</option>
             </select><br>
             
-            <select class="NomeLogin" onchange="" style="grid-column-end: 7; grid-column-start: 5; grid-row: 2/span 1;" id="slcCampeao">
+            <select class="NomeLogin" onchange="" name="campeao" style="grid-column-end: 7; grid-column-start: 5; grid-row: 2/span 1;" id="slcCampeao">
              
             </select><br>
             </div>
             <div class="campos">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" onfocus="focar(this)" onblur="disfocar(this)" class="senhaLogin"><br>
+                <input type="password" name="senhaC" id="senha" onfocus="focar(this)" onblur="disfocar(this)" class="senhaLogin"><br>
             </div>
             <div class="campos">
                 <label for="confirm" class="confirmar">Confirmar senha</label>
@@ -90,7 +91,7 @@
     
                 </ul>
             </div>
-            <button type="button" class="btncadastrar" onclick="validarCadastro()" >Cadastrar</button><br>
+            <button type="submit" class="btncadastrar" onclick="validarCadastro()" >Cadastrar</button><br>
         </form>
         
         <span style="font-size: 20px;"> Já criou uma conta? <a href="login.html" style="color: white;">Clique
@@ -101,22 +102,52 @@
         <div id='idPop' class="sobreposicao">
         <div class="popUp">
             <span>Cadastro efetuado com Sucesso</span>
-            <a class="fecharBTN" href="campeonato.html">&times;</a>
-            <p>Você irá retornar para a página inicial</p>
+            <a class="fecharBTN" href="login.html">&times;</a>
+            <p>Você irá ser redirecionado para a Página de Login</p>
         </div>
         </div>
+
+        
     </div>
     
     <div class="rodape">
         <img src="css/imagens/wixLogo.PNG" alt="">
         <p style="color: white;">Feito por Daniel Soares 2020©</p>
     </div>
-    <script src="js/animacao.js"></script>
+    <script src="animacao.js"></script>
 </body>
 
 </html>
 <script >
- 
+    function cadastrar() {
+        if(validarCadastro()){
+        var formulario = new URLSearchParams(new FormData(FormularioC));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                idPop.style.display = 'block';
+    setInterval(() => {
+        window.location.href='login.html'
+    }, 2000);
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    console.log(resposta);
+                });
+            }
+        });
+    }
+        return false;
+    
+}
+
+
 //     const input = document.querySelectorAll("input");  //pega todos os elementos com a class .mudar(const valor contante)
 
 // for (let i = 0; i < input.length; i++) {    //contador para todos os elementos
@@ -139,7 +170,8 @@
 // for(let cont = 0;cont< campeao.length; cont++){
 //     slcCampeao.innerHTML += `<option value="${cont+1}">${campeao[cont]}</option>` 
 // }
+
     var dataAtual = new Date();
-    divData.innerHTML += `<input type="date" class="NomeLogin" id="data" max="${dataAtual.getFullYear()}-${(dataAtual.getMonth()+1).length > 1 ? (dataAtual.getMonth()+1) : "0"+(dataAtual.getMonth()+1) }-${(dataAtual.getDate()).length > 1 ? dataAtual.getDate(): "0"+ dataAtual.getDate()  }" value="2002-01-01">`;
+    divData.innerHTML += `<input type="date" name="DataNasc" class="NomeLogin" id="data" max="${dataAtual.getFullYear()}-${(dataAtual.getMonth()+1).length > 1 ? (dataAtual.getMonth()+1) : "0"+(dataAtual.getMonth()+1) }-${(dataAtual.getDate()).length > 1 ? dataAtual.getDate():  dataAtual.getDate()  }" value="2002-01-01">`;
 
 </script>

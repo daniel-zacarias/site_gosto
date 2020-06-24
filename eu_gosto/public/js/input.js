@@ -1,5 +1,4 @@
 var mysql = require('mysql');
-var valores = require('./animacao')
  var con = mysql.createConnection({
     host     : 'localhost',
     port     : '3306',
@@ -21,7 +20,6 @@ var valores = require('./animacao')
     console.log("Connected!");
   });
 
-  con.end();
 
 
   

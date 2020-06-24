@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-LOL</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
+    <script src="funcoes.js"></script>
+    <script src="animacao.js" defer></script>
+</head>
+
+<body>
+    <div class="Menu">
+        <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
+        <ul class="nav">
+            <li class="select"><a href="index.html">Início</a></li>
+            <li><a href="regras.html">Regras</a></li>
+            <li><a href="premio.html">Prêmios</a></li>
+            <li><a href="login.html"><button class="btnlogin">Login</button></a></li>
+
+            <li><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            <li><button class="btncadastro" id="btnPerfil" onclick="popUp.style.display='block'" style="display: none;">
+                    Meu Perfil</button></li>
+        </ul>
+    </div>
+    <!-- Cabeçalho -->
+    <div class="sobreposicao" id="popUp" style="display: block;" onload="opcoes">
+        <div class="perfil">
+            <span>Olá, <span id="Nick_Perfil">DSZDS</span></span>
+            <a class="fecharBTN" href="#" onclick="popUp.style.display='none'">&times;</a> <br>
+            <div class="infos">
+                <div class="rota">
+                    <span>Rota Principal</span><br>
+                    <img  id="rotaIMG" alt=""><br>
+                    <span id="rotaNome">Selva</span>
+                </div>
+                <div class="campeaoFav">
+                    <span>Campeao Favorito</span><br>
+                    <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
+                    <div class="time">
+                        <span>TIME</span><br>
+                        <span>EM MANUTENÇÃO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="DivLogOut"><a href="" onclick="logoff()" class="btnLogOut">Sair do perfil</a>
+                <a onclick="alterarBtn()" class="btnLogOut btnAlterar">Alterar</a></div>
+        </div>
+        <form class="opcoes" id="formAlteracao" style="display: none;" method="POST" onsubmit="return alteracao()">
+        <div style="display: flex; justify-content: space-evenly;">
+            <div class="divRota">
+                
+                    <label for="selectRota">Nova Rota</label><br>
+                    <select name="Rota" class="selectRota" id="Lane">
+                        <option value="1">TOPO</option>
+                        <option value="2">SELVA</option>
+                        <option value="3">MEIO</option>
+                        <option value="4">ATIRADOR</option>
+                        <option value="5">SUPORTE</option>
+                    </select>
+                </div>
+                <div class="campeaoFa">
+                    <span>Campeao Favorito</span><br>
+                    <select name="Campeao" id="slcCampeao"></select>
+                </div>
+            </div>
+            <div class="Divalteracao"><button href="" onclick="" class="btnLogOut DivBtnA">salvar</button></div>
+        </form>
+    </div>
+    <!-- rodapé -->
+    <div class="rodape">
+        <img src="css/imagens/wixLogo.PNG" alt="">
+        <p>Feito por Daniel Soares 2020©</p>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function alteracao(){
+        let id = sessionStorage.id_usuario_meuapp;
+        var formulario = new URLSearchParams(new FormData(formAlteracao));
+        fetch(`/usuarios/alterar/${id}`, {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok){
+                verificar_autenticacao();
+                console.log('Alteração feita com sucesso')
+            } });
+        alterarinfo();
+        return false
+    }
+    verificar_autenticacao();
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H-LOL</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/campeonato.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
+    <script src="funcoes.js"></script>
+</head>
+<body>
+    <div class="Menu">
+        <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
+        <ul class="nav">
+            <li class="select"><a href="index.html" >Início</a></li>
+            <li><a href="regras.html">Regras</a></li>
+            <li><a href="premio.html">Prêmios</a></li>
+            
+            <li id='btns'><a href="login.html"><button class="btnlogin">Login</button></a></li>
+            
+            <li id='btns'><a href="Cadastrar.html"><button class="btncadastro"> Cadastrar</button></a></li>
+            <li id="btnPerfil"style="display: none;" ><button class="btncadastro"  onclick="popUp.style.display='block'" > Meu Perfil</button></li>
+        </ul>
+    </div>
+    <!-- Cabeçalho -->
+    <div class="entrada"> 
+        <span>Se inscreva para Participar do torneio H-LOL.</span><br>
+        <span>Venha e se Torne um incrível campeão.</span>
+        
+    </div>
+    <a href="Cadastrar.html"><button class="btnIsc">Inscreva-se</button></a>
+
+    <div class="inicioVic" >
+        
+    </div>
+
+    <div class="Container">    
+        <P>O que você precisa saber</P>
+    <Div class="square">
+        
+        <div class="premios">
+            <p>A partir do Terceiro Lugar do campeonato Haverá incríveis Prêmios (Como skins e RP)</p>
+            <img src="css/imagens/3b51a560eaed43818fb38f47f18fe866.png" alt="">
+        </div>
+        <div class="data">
+            <p>O campeonato ocorrerá nos dias 2 e 3 de Julho</p>
+            <span>2/3</span>
+        </div>
+        <div class="Transmissao">
+            <p>os jogos não são presenciais e serão transmitidos na Twitch, ou seja, prove o seu valor ou passe uma vergonha ao vivo</p>
+            <img src="css/imagens/Clean_Emote.png" alt="">
+        </div>
+    </Div>
+    </div>
+    <!-- rodapé -->
+    <div class="rodape">
+        <img src="css/imagens/wixLogo.PNG" alt="">
+        <p>Feito por Daniel Soares 2020©</p>
+    </div>
+    <div class="sobreposicao" id="popUp"  style="display: none;">
+        <div class="perfil">
+            <span>Olá, <span id="Nick_Perfil">DSZDS</span></span>
+            
+            <a class="fecharBTN" href="#" onclick="popUp.style.display='none'">&times;</a> <br>
+            <div class="infos">
+            <div class="rota">
+                <span>Rota Principal</span><br>
+                <img src="css/imagens/selva.png" id="rotaIMG" alt=""><br>
+                <span id="rotaNome">Selva</span>
+            </div>
+            <div class="campeaoFav">
+                <span>Campeão Favorito</span><br>
+                <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
+                <div class="time">
+                    <span>TIME</span><br>
+                    <span>EM MANUTENÇÃO</span> 
+                </div>
+            </div>
+             </div>
+             <div class="DivLogOut"><a href="" onclick="logoff()" class="btnLogOut">Sair do perfil</a></div>
+        </div>
+        </div>
+</body>
+</html>
+<script>
+    
+    verificar_autenticacao()
+</script>

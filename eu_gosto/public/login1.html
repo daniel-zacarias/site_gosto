@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página com exemplo de Autenticação (Login)</title>
+
+</head>
+
+<body>
+
+    <form id="form_login" method="post" onsubmit="return entrar()">
+        Usuário: <input type="text" name="Email">
+        <br>
+        Senha: <input type="password" name="senha">
+        <br>
+        <button id="btn_entrar">Entrar</button>
+    </form>
+    
+    
+    
+    
+
+</body>
+
+</html>
+<script>
+
+    function entrar() {
+       // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.Nick;
+                    
+                    window.location.href = 'grafico-chartjs.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                   // finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    
+
+</script>

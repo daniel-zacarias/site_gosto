@@ -1,0 +1,113 @@
+.sobreposicao{
+    position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 2;
+  
+  border: #fff solid 5px;
+}
+
+.infos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.rota{
+    text-align: center;
+}
+.perfil, .opcoes{
+    margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+    height: auto;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+}
+.perfil{
+    margin-bottom: 0;
+}
+.opcoes{
+   margin-top: 0 ;
+   border: black 2px solid;
+   border-radius: 1px ;
+}
+.campeaoFav{
+    text-align: center;
+    justify-items: end;
+}
+
+
+.Nome_campeao{
+    align-self: center;
+    padding-top: 20px;
+    font-size: 30px !important;
+}
+.fecharBTN {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    font-size: 50px;
+    color: black !important;
+    font-weight: bold;
+}
+.time{
+    margin-top: 20px;
+}
+.time span:nth-of-type(2){
+    color: red;
+}
+.DivLogOut{
+    margin-top: 20px;
+}
+.btnLogOut{
+    text-decoration: none;
+    font-size: 1.4em;
+    color: white;
+    background-color: #A82929;
+    border-radius: 24px;
+    padding: 5px 12px;
+    margin-top: 10px;
+}
+#Nick_Perfil{
+    color: #4faa25;
+    font-style: oblique;
+}
+
+.perfil span{
+    margin-top:0 ;
+    font-size: 20px;
+}
+.perfil .fecharBTN:hover{
+    color: #f5350B !important;
+}
+.popUp p {
+    font-size: 20px;
+}
+
+.DivBtnA{
+    background-color: #158A17;
+}
+
+.btnAlterar{
+    margin-left: 20px;
+    background-color: #158A17;
+    cursor: pointer;
+}
+
+select{
+    background-color: rgb(25, 25, 25);
+    color: white;
+    border: none;
+    font-family: fantasy;
+    height: 40px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
