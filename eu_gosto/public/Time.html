@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="css/time.css">
     <link rel="shortcut icon" href="css/imagens/logodaniel.png" type="image/x-icon">
     <script src="funcoes.js"></script>
-    <script defer>
-
-    </script>
+    <script src="time.js" defer></script>
 </head>
 
 <body onload="popular()">
@@ -62,20 +60,38 @@
                     </div>
                 </div>
             </div>
+            
             <div class="DivLogOut"><a href="index.html" onclick="logoff()" class="btnLogOut">Sair do perfil</a></div>
         </div>
+    </div>
+    <div class="sobreposicao aguardar" style="display: none;">
     </div>
 </body>
 
 </html>
 <script defer>
+
     let times = {
         id: [],
         nome: []
     }
+    function atualizar() {
 
+fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(resposta => {
+    
+    if (resposta.ok) {
+        resposta.json().then(json => {
+           
+                sessionStorage.fkTime_meuapp = json[0].fktime;
+                popular();
+            
+        })
+    }
+})
+}
 
     function popular() {
+        
         fetch('/times').then(resposta => {
             if (resposta.ok) {
                 times.id = [];
@@ -92,20 +108,21 @@
         })
     }
     function elementos(dados) {
+        document.getElementsByClassName('contentTime')[0].innerHTML = '';
         let table = document.createElement('table');
         // let tr1 = document.createElement('tr');
         // let th = document.createElement('th');
         // table.appendChild(tr1);
         // tr1.appendChild
         for (i = 0; i < dados.id.length; i++) {
-
             let tr = document.createElement('tr');
             
             if (i == 0) { 
                 let tr = document.createElement('tr');
                 let th = {
                     id : document.createElement('th'),
-                    nome: document.createElement('th')
+                    nome: document.createElement('th'),
+                    
                 }
                 th.id.innerHTML = '#';
                 th.nome.innerHTML = 'Nome do Time'
@@ -117,12 +134,27 @@
             tr.classList.add('TabelaTimes')
             let td = {
                 id: document.createElement('td'),
-                nome: document.createElement('td')
+                nome: document.createElement('td'),
+                participantes : document.createElement('td'), 
+                entrar: document.createElement('td'),
             };
             td.id.innerHTML = dados.id[i];
             td.nome.innerHTML = dados.nome[i];
             tr.appendChild(td.id);
             tr.appendChild(td.nome);
+            let botoes = criarBotao(dados.id[i]);
+            td.participantes.appendChild(botoes[0]);
+            
+            let teste1 = dados.id[i] !=  sessionStorage.fkTime_meuapp;
+            if(teste1)
+            td.entrar.appendChild(botoes[1]);
+            else
+            td.entrar.appendChild(botoes[2]);
+            tr.appendChild(td.participantes);
+            
+            tr.appendChild(td.entrar);
+            
+
             document.getElementsByClassName('contentTime')[0].appendChild(table);
         }
     }

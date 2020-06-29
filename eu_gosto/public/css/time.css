@@ -30,20 +30,54 @@ body{
     margin-bottom: 30px;
 }
 
-.exibir th{
+.exibir th:nth-of-type(1){
     font-family: FFF;
 }
+
+
 .exibir td, th {
     color: black;
     font-size: 50px;
 }
 
-.exibir tr td:nth-of-type(1) {
+th{
+    border-bottom: 3px black solid;
+    white-space: nowrap;
+}
 
+
+.exibir tr td:nth-of-type(1) {
+    
     border: none !important;
     font-family: FFF;
 }
 
-.exibir div p:nth-of-type(2) {
-    color: red;
+.exibir tr td:nth-of-type(2) {
+    
+    border: none !important;
+    font-family: fantasy;
+}
+
+.btnTime{
+    padding: 20px 20px;
+    word-wrap: none;
+    font-size: 20px;
+    word-break: normal;
+    cursor: pointer;
+    white-space:nowrap;
+    border-radius: 4px;
+    border: none;
+    
+}
+
+tr td:nth-of-type(4) button{
+
+    background-color: #47DE72;
+}
+tr td:nth-of-type(3) button{
+    background-color: #9487FA;
+}
+
+.sair{
+    background-color: #DE3142 !important;
 }

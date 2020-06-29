@@ -53,6 +53,16 @@ router.post('/alterar/:id', function(req, res, next){
 
 	});
 });
+/* Verificar o time do jogador*/
+router.get('/verificarTime/:idjogador', function(req, res, next){
+	let jogador = req.params.idjogador;
+	let query = `select fktime from jogadores where idjogador = ${jogador}`;
+	sequelize.query(query, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado);
+			console.log(resultado);
+});
+});
 
 /* Cadastrar usuário */
 router.post('/cadastrar', function(req, res, next) {
