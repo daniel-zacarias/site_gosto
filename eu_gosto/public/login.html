@@ -78,6 +78,9 @@
                     sessionStorage.fkCampeao_meuapp = json.fkcampeao;
                     sessionStorage.fkRota_meuapp = json.fkrota;
                     sessionStorage.fkTime_meuapp = json.fktime;
+                    sessionStorage.nometime_meuapp = undefined;
+                    if(sessionStorage.fkTime_meuapp != 'null')
+                    sessionStorage.nometime_meuapp = json.NomeTIme;
                     window.location.href = 'index.html';
                 });
 

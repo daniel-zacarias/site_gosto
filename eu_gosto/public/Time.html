@@ -14,7 +14,7 @@
     <script src="time.js" defer></script>
 </head>
 
-<body onload="popular()">
+<body onload="popular(), teste()">
     <div class="Menu">
         <a href="index.html"> <img src="css/imagens/wixLogo.PNG" alt="Icone" class="logo"> </a>
         <ul class="nav">
@@ -56,15 +56,39 @@
                     <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
                     <div class="time">
                         <span>TIME</span><br>
-                        <span>EM MANUTENÇÃO</span>
+                        <span id="Time">EM MANUTENÇÃO</span> 
                     </div>
                 </div>
             </div>
-            
+
             <div class="DivLogOut"><a href="index.html" onclick="logoff()" class="btnLogOut">Sair do perfil</a></div>
         </div>
     </div>
-    <div class="sobreposicao aguardar" style="display: none;">
+    <div class="sobreposicao aguardar" onclick="this.style.display = 'none'" style="display: none;">
+        <!-- <div class="perfil" >
+            
+
+            <a class="fecharBTN" href="#" onclick="popUp.style.display='none'">&times;</a> <br>
+            <span id="TextoAviso"></span>
+            </div> -->
+    </div>
+    <div class="sobreposicao" style="display: none;" onload="teste()">
+        <div class="perfil Perfiltime">
+            <span id="TimeNome"></span>
+
+            <a class="fecharBTN" href="#"
+                onclick="document.getElementsByClassName('sobreposicao')[2].style.display='none'">&times;</a> <br>
+            <table>
+                <tr>
+                    <th>
+                        Rota
+                    </th>
+                    <th>
+                        Nome
+                    </th>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
@@ -77,21 +101,22 @@
     }
     function atualizar() {
 
-fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(resposta => {
-    
-    if (resposta.ok) {
-        resposta.json().then(json => {
-           
-                sessionStorage.fkTime_meuapp = json[0].fktime;
-                popular();
-            
+        fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(resposta => {
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+
+                    sessionStorage.fkTime_meuapp = json[0].fktime;
+
+                    popular();
+
+                })
+            }
         })
     }
-})
-}
 
     function popular() {
-        
+
         fetch('/times').then(resposta => {
             if (resposta.ok) {
                 times.id = [];
@@ -116,13 +141,13 @@ fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(respos
         // tr1.appendChild
         for (i = 0; i < dados.id.length; i++) {
             let tr = document.createElement('tr');
-            
-            if (i == 0) { 
+
+            if (i == 0) {
                 let tr = document.createElement('tr');
                 let th = {
-                    id : document.createElement('th'),
+                    id: document.createElement('th'),
                     nome: document.createElement('th'),
-                    
+
                 }
                 th.id.innerHTML = '#';
                 th.nome.innerHTML = 'Nome do Time'
@@ -135,7 +160,7 @@ fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(respos
             let td = {
                 id: document.createElement('td'),
                 nome: document.createElement('td'),
-                participantes : document.createElement('td'), 
+                participantes: document.createElement('td'),
                 entrar: document.createElement('td'),
             };
             td.id.innerHTML = dados.id[i];
@@ -145,18 +170,26 @@ fetch(`/usuarios/verificarTime/${sessionStorage.id_usuario_meuapp}`).then(respos
             let botoes = criarBotao(dados.id[i]);
             td.participantes.appendChild(botoes[0]);
             
-            let teste1 = dados.id[i] !=  sessionStorage.fkTime_meuapp;
-            if(teste1)
-            td.entrar.appendChild(botoes[1]);
-            else
-            td.entrar.appendChild(botoes[2]);
+            let teste1 = dados.id[i] != sessionStorage.fkTime_meuapp;
+            if (teste1){
+                td.entrar.appendChild(botoes[1]); 
+                  
+            }
+            else{
+                td.entrar.appendChild(botoes[2]);
+                sessionStorage.nometime_meuapp = dados.nome[i];
+            }
             tr.appendChild(td.participantes);
-            
+
             tr.appendChild(td.entrar);
-            
+
 
             document.getElementsByClassName('contentTime')[0].appendChild(table);
+            
         }
+        if(sessionStorage.fkTime_meuapp == 'null')
+            sessionStorage.nometime_meuapp = undefined;
+            verificar_autenticacao();
     }
     verificar_autenticacao();
 </script>

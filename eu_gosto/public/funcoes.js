@@ -1,8 +1,10 @@
+
 let login_usuario;
 let nome_usuario;
 let campeao_usuario;
 let Rota_usuario;
 let id_usuario;
+let nomeTime ; 
 
 const campeao = ['Aatrox', 'Ahri', 'Akali', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Aphelios', 'Ashe', 'Aurelion Sol', 'Azir', 'Bardo',
         'Blitz', 'Brand', 'Braum', 'Caitlyn', 'Camille', 'Cassiopeia', "Cho'Gath", 'Corki', 'Darius', 'Diana', 'Dr. Mundo', 'Draven', 'Ekko', 'Elise', 'Evelynn', 'Ezreal', 'Fiddlesticks', 'Fiora', 'Fizz', 'Galio', 'GangPlank', 'Garen', 'Gnar', 'Gragas', 'Graves', 'Hecarim', 'Heimerdinger', 'Illaoi',
@@ -23,6 +25,7 @@ function verificar_autenticacao() {
     campeao_usuario = sessionStorage.fkCampeao_meuapp;
     Rota_usuario = sessionStorage.fkRota_meuapp;
     id_usuario = sessionStorage.id_usuario_meuapp;
+    nomeTime = sessionStorage.nometime_meuapp;
     if (login_usuario == undefined)  {
         
     } else {
@@ -32,6 +35,12 @@ function verificar_autenticacao() {
         btnPerfil.style.display = 'block';
         document.getElementsByClassName('times')[0].style.display = 'block'
         }catch{}
+        if(nomeTime == 'undefined'){
+            document.getElementById('Time').innerHTML = 'Você não Possui um Time'
+        }
+        else{
+            document.getElementById('Time').innerHTML = nomeTime;
+        }
         Nick_Perfil.innerHTML = nome_usuario;
         rotaIMG.src = `css/imagens/${Rota_usuario}.png`;
         rotaNome.innerHTML = rota[Rota_usuario - 1];

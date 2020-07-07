@@ -5,6 +5,9 @@ var Usuario = require('../models').Usuario;
 
 let sessoes = [];
 
+
+
+
 /* Recuperar usuário por login e senha */
 router.post('/autenticar', function(req, res, next) {
 	console.log('Recuperando usuário por login e senha');
@@ -12,7 +15,7 @@ router.post('/autenticar', function(req, res, next) {
 	var login = req.body.nick; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from jogadores where Nick='${login}' and senha='${senha}'`;
+	let instrucaoSql = `select * from jogadores, timelol where Nick='${login}' and senha='${senha}' and (fktime=idtime or fktime is null)`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -27,7 +30,13 @@ router.post('/autenticar', function(req, res, next) {
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
 			res.status(403).send('Login e/ou senha inválido(s)');
-		} else {
+		} else if(resultado.length > 3){
+			console.log(resultado[0].dataValues);
+			sessoes.push(resultado[0].dataValues.Nick); //trocar login pelo nome de sua coluna
+			console.log('sessoes: ',sessoes);
+			res.json(resultado[0]);
+		}
+		else{
 			res.status(403).send('Mais de um usuário com o mesmo login e senha!');
 		}
 

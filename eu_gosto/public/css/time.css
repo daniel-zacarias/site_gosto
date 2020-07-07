@@ -18,7 +18,7 @@ body{
     border: 1px solid #fff;
     text-align: left;
   }
-.exibir table{
+.exibir table, table{
   width: 600px;
   border-color: white;
   padding: 30px;
@@ -35,7 +35,7 @@ body{
 }
 
 
-.exibir td, th {
+td, th {
     color: black;
     font-size: 50px;
 }
@@ -43,6 +43,10 @@ body{
 th{
     border-bottom: 3px black solid;
     white-space: nowrap;
+}
+
+.perfil th{
+    font-size: 25px !important;
 }
 
 
@@ -80,4 +84,13 @@ tr td:nth-of-type(3) button{
 
 .sair{
     background-color: #DE3142 !important;
+}
+
+.Perfiltime{
+    width: 613px;
+}
+
+#TimeNome{
+    font-size: 71px;
+    margin-left: 30px;
 }

@@ -47,7 +47,7 @@ router.get('/entrar/:time/:rota/:idUser', function (req, res, next) {
 							console.log(resultado[0].time);
 							let query = `update jogadores set fktime = ${time} where idjogador = ${idJogador};`;
 							sequelize.query(query).then(() => {
-								res.json({'Mensagem': `Alteração feita com sucesso do usuario:${resultado[0].NICK}`});
+								res.json({'Mensagem': `Alteração feita com sucesso do usuario:${resultado[0].NICK}`  });
 								console.log('inserção feita com sucesso');
 							})
 							console.log('Vaga disponivel');
@@ -60,7 +60,9 @@ router.get('/entrar/:time/:rota/:idUser', function (req, res, next) {
 					})
 			}
 			else {
-				res.json({'Mensagem': `Vaga de ${resultado[0].nomeRota} não disponivel`});
+				res.json({'Mensagem': `Vaga de ${resultado[0].nomeRota} não disponivel`, 
+			
+			'teste': false});
 				console.log('Vaga não disponivel');
 				let query = `update jogadores set fktime = null where idjogador = ${idJogador};`;
 				sequelize.query(query)
@@ -68,6 +70,23 @@ router.get('/entrar/:time/:rota/:idUser', function (req, res, next) {
 		});
 });
 
-
+router.get('/verificarTime/:idtime', function(req, res, next){
+	let idtime = req.params.idtime;
+	let query = `select Nick, fkrota, NomeTIme from jogadores , timeLOL where fktime = ${idtime} and fktime = idtime`;
+	sequelize.query(query, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			if(resultado.length != 0){
+			res.json(resultado);
+			console.log(resultado);
+			}
+			else{
+				let query = `select NomeTIme from timeLOL where idTime = ${idtime}`;
+				sequelize.query(query, { type: sequelize.QueryTypes.SELECT })
+				.then(resultado => {
+					res.json(resultado)
+				})
+			}
+});
+});
 
 module.exports = router;
