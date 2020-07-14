@@ -56,7 +56,7 @@
                     <span class="Nome_campeao" id="nomeCampeao">Yorick</span>
                     <div class="time">
                         <span>TIME</span><br>
-                        <span id="Time">EM MANUTENÇÃO</span> 
+                        <span id="Time">EM MANUTENÇÃO</span>
                     </div>
                 </div>
             </div>
@@ -74,20 +74,26 @@
     </div>
     <div class="sobreposicao" style="display: none;" onload="teste()">
         <div class="perfil Perfiltime">
-            <span id="TimeNome"></span>
+                
+                <span id="TimeNome"></span>
 
-            <a class="fecharBTN" href="#"
-                onclick="document.getElementsByClassName('sobreposicao')[2].style.display='none'">&times;</a> <br>
-            <table>
-                <tr>
-                    <th>
-                        Rota
-                    </th>
-                    <th>
-                        Nome
-                    </th>
-                </tr>
-            </table>
+                <a class="fecharBTN" href="#"
+                    onclick="document.getElementsByClassName('sobreposicao')[2].style.display='none'">&times;</a> <br>
+                
+                    <table>
+                    <div class="sobreposicao" style="display: none; background-color: black !important;">
+                        <div class="load"></div>
+                    </div>
+                    <tr>
+                        <th>
+                            Rota
+                        </th>
+                        <th>
+                            Nome
+                        </th>
+                    </tr>
+                </table>
+                
         </div>
     </div>
 </body>
@@ -169,13 +175,13 @@
             tr.appendChild(td.nome);
             let botoes = criarBotao(dados.id[i]);
             td.participantes.appendChild(botoes[0]);
-            
+
             let teste1 = dados.id[i] != sessionStorage.fkTime_meuapp;
-            if (teste1){
-                td.entrar.appendChild(botoes[1]); 
-                  
+            if (teste1) {
+                td.entrar.appendChild(botoes[1]);
+
             }
-            else{
+            else {
                 td.entrar.appendChild(botoes[2]);
                 sessionStorage.nometime_meuapp = dados.nome[i];
             }
@@ -185,11 +191,11 @@
 
 
             document.getElementsByClassName('contentTime')[0].appendChild(table);
-            
+
         }
-        if(sessionStorage.fkTime_meuapp == 'null')
+        if (sessionStorage.fkTime_meuapp == 'null')
             sessionStorage.nometime_meuapp = undefined;
-            verificar_autenticacao();
+        verificar_autenticacao();
     }
     verificar_autenticacao();
 </script>

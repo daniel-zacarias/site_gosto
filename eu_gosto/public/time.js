@@ -60,9 +60,12 @@ function teste() {
 
 
 function entrarNoTime(botao) {
+    
     fetch(`/times/entrar/${botao.value}/${sessionStorage.fkRota_meuapp}/${sessionStorage.id_usuario_meuapp}`).then(resposta => {
         if (resposta.ok) {
+            
             resposta.json().then(json => {
+
                 if(json.teste == false){
                     let confirmar = window.confirm(json.Mensagem);
                     if(confirmar == true){
@@ -154,8 +157,10 @@ function criarPerfilTime(dados) {
 }
 
 function verificarTime(valor, tela) {
+    document.getElementsByClassName('sobreposicao')[3].style.display = 'block'
     fetch(`times/verificartime/${valor}`)
         .then(resposta => {
+            document.getElementsByClassName('sobreposicao')[3].style.display = 'none'
             if (resposta.ok) {
                 resposta.json().then(json => {
                     criarPerfilTime(json);
